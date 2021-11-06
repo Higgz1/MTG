@@ -10,7 +10,27 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'card-view',
+    loadChildren: () => import('./pages/cardView/card-view/card-view.module').then( m => m.CardViewPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'card-view',
+    loadChildren: () => import('./pages/card-view/card-view.module').then( m => m.CardViewPageModule)
+  },
+
 ];
 
 @NgModule({
