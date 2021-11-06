@@ -1,0 +1,7 @@
+{
+  "name": "MTG",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
