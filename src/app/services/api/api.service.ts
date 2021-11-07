@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class ApiService {
 
-  url: string = 'https://api.magicthegathering.io/v1/';
+  url: string = 'https://api.magicthegathering.io/v1';
   constructor(private http: HttpClient) {}
 
   get(endpoint: string, params?: any, reqOpts?: any) {
