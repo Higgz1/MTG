@@ -6,7 +6,7 @@ import { SetsService } from './sets.service';
 describe('SetsService', () => {
   let setService: SetsService;
   let httpTestingController: HttpTestingController;
-  
+
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -23,15 +23,17 @@ describe('SetsService', () => {
     expect(setService).toBeTruthy();
   });
 
+  describe('Sets API Tests', () => {
+    it('should make get request for sets', () => {
+      let succeeded = false;
 
-  it('should make get request for sets', () => {
-
-    const expectedSets = [[
-      {
-          "code": "10E",
-          "name": "Tenth Edition",
-          "type": "core",
-          "booster": [
+      const mockResponse = {
+        "sets": [
+          {
+            "code": "10E",
+            "name": "Tenth Edition",
+            "type": "core",
+            "booster": [
               "rare",
               "uncommon",
               "uncommon",
@@ -46,52 +48,37 @@ describe('SetsService', () => {
               "common",
               "common",
               "common"
-          ],
-          "releaseDate": "2007-07-13",
-          "block": "Core Set",
-          "onlineOnly": false
-      },
-      {
-          "code": "2ED",
-          "name": "Unlimited Edition",
-          "type": "core",
-          "booster": [
-              "rare",
-              "uncommon",
-              "uncommon",
-              "uncommon",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common",
-              "common"
-          ],
-          "releaseDate": "1993-12-01",
-          "block": "Core Set",
-          "onlineOnly": false 
+            ],
+            "releaseDate": "2007-07-13",
+            "block": "Core Set",
+            "onlineOnly": false
+          },
+        ]
       }
-    ]];
 
-    setService.getSets().subscribe((resp) => {
-      expect(resp).not.toBe(null);
+      setService.getSets().subscribe((resp) => {
+        succeeded = true;
+        expect(resp).not.toBe({empty:true});
+        expect(resp).toEqual(mockResponse, 'should return expected results'),fail;
+        expect(succeeded).toBeTrue();
+      });
+
+      const req = httpTestingController.expectOne('https://api.magicthegathering.io/v1/sets');
+      expect(req.request.method).toEqual('GET');
+  
+
+      req.flush(mockResponse);
+
+      httpTestingController.verify();
+
+
+
+
     });
 
-    const req = httpTestingController.expectOne('https://api.magicthegathering.io/v1/sets');
-    expect(req.request.method).toEqual('GET');
-    req.flush(expectedSets);
-
-    httpTestingController.verify();
+  })
 
 
-
-
-  });
 });
 
 
