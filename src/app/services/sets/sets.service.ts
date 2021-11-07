@@ -12,7 +12,7 @@ export class SetsService {
     return this.apiService.get('sets');
   }
 
-  get(){
-    return this.apiService.get('sets');
+  getSingleSet(setId){
+    return this.apiService.get('sets/:'+ setId);
   }
 }
