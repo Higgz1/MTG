@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SetsService } from 'src/app/services/sets/sets.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  sets: any[];
 
-  constructor() { }
-
+  constructor(private setService: SetsService) {}
   ngOnInit() {
+    this.getSets();
   }
 
+  getSets() {
+    this.setService.getSets().subscribe((setsList) => {
+      this.sets = Object.values(setsList);
+    });
+  }
 }

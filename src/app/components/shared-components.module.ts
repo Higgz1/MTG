@@ -6,7 +6,7 @@ import { SingleCardComponent } from './single-card/single-card.component';
 import { CardsComponent } from './cards/cards.component';
  
 @NgModule({
-  declarations: [SetsComponent],
+  declarations: [SetsComponent,SingleCardComponent,CardsComponent],
   imports: [
     CommonModule,
     IonicModule
