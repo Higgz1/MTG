@@ -1,6 +1,6 @@
 <ion-list>
   <ion-item-sliding >
-    <ion-item lines="none">
+    <ion-item lines="none" (click)="getCards(set.code)">
       <ion-text >
         <h5 class="set-name" *ngIf="set">{{set.name}}</h5>
         <p class="set-block" *ngIf="set">{{set.block || 'No Block'}} | {{set.type || 'No Block'}}</p>

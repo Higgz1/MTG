@@ -59,4 +59,9 @@ describe('SetsComponent', () => {
      // 3
      // 3
   });
+
+  it('it should correctly pass the set id on click', () => {
+    let code = "KTK";
+    expect(component.getCards(code)).toBe("")
+  });
 });
