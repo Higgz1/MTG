@@ -9,6 +9,8 @@ import { SetsService } from 'src/app/services/sets/sets.service';
 export class HomePage implements OnInit {
   sets: any[];
 
+  
+
   constructor(private setService: SetsService) {}
   ngOnInit() {
     this.getSets();
@@ -16,7 +18,8 @@ export class HomePage implements OnInit {
 
   getSets() {
     this.setService.getSets().subscribe((setsList) => {
-      this.sets = Object.values(setsList);
+      this.sets = Object.values(setsList)[0];
+      console.log('sets',this.sets);
     });
   }
 }

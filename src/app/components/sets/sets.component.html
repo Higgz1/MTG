@@ -1,7 +1,15 @@
 <ion-list>
   <ion-item-sliding >
-    <ion-item *ngIf="set" lines="none"> 
-      <ion-label>Item</ion-label>
+    <ion-item lines="none">
+      <ion-text >
+        <h6 class="set-name">{{set.name}}</h6>
+        <p class="set-block">{{set.block || 'No Block'}} | {{set.type || 'No Block'}}</p>
+        <!-- <p class="set-block">{{set.booster.lenth || 'No Block'}}</p> -->
+      </ion-text>
+      <ion-text slot="end">
+        <h6 class="set-releaseDate">{{set.releaseDate | date :  "dd.MM.y"}}</h6>
+      </ion-text>
+      <!-- <ion-icon slot="end" name="ellipsis-vertical-sharp" ></ion-icon> -->
     </ion-item>
     <ion-item-options side="end">
       <ion-item-option (click)="unread(item)">Unread</ion-item-option>
