@@ -2,9 +2,9 @@
   <ion-item-sliding >
     <ion-item lines="none">
       <ion-text >
-        <h6 class="set-name">{{set.name}}</h6>
+        <h5 class="set-name">{{set.name}}</h5>
         <p class="set-block">{{set.block || 'No Block'}} | {{set.type || 'No Block'}}</p>
-        <!-- <p class="set-block">{{set.booster.lenth || 'No Block'}}</p> -->
+        <p class="set-block">{{set.booster.lenth || 'No Block'}}</p>
       </ion-text>
       <ion-text slot="end">
         <h6 class="set-releaseDate">{{set.releaseDate | date :  "dd.MM.y"}}</h6>

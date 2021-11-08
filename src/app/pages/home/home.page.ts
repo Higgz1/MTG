@@ -18,8 +18,8 @@ export class HomePage implements OnInit {
 
   getSets() {
     this.setService.getSets().subscribe((setsList) => {
-      this.sets = Object.values(setsList)[0];
-      console.log('sets',this.sets);
+      return this.sets = Object.values(setsList)[0];
+
     });
   }
 }
