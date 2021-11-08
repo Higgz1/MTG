@@ -3,33 +3,22 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'card-view',
-    loadChildren: () => import('./pages/cardView/card-view/card-view.module').then( m => m.CardViewPageModule)
-  },
-  {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'card-view',
     loadChildren: () => import('./pages/card-view/card-view.module').then( m => m.CardViewPageModule)
   },
+  {
+    path: 'card-list',
+    loadChildren: () => import('./pages/card-list/card-list.module').then( m => m.CardListPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  }
 
 ];
 
