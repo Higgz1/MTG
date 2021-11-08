@@ -2,12 +2,12 @@
   <ion-item-sliding >
     <ion-item lines="none">
       <ion-text >
-        <h5 class="set-name">{{set.name}}</h5>
-        <p class="set-block">{{set.block || 'No Block'}} | {{set.type || 'No Block'}}</p>
-        <p class="set-block">{{set.booster.lenth || 'No Block'}}</p>
+        <h5 class="set-name" *ngIf="set">{{set.name}}</h5>
+        <p class="set-block" *ngIf="set">{{set.block || 'No Block'}} | {{set.type || 'No Block'}}</p>
+        
       </ion-text>
       <ion-text slot="end">
-        <h6 class="set-releaseDate">{{set.releaseDate | date :  "dd.MM.y"}}</h6>
+        <h6 class="set-releaseDate" *ngIf="set">{{set.releaseDate | date :  "dd.MM.y"}}</h6>
       </ion-text>
       <!-- <ion-icon slot="end" name="ellipsis-vertical-sharp" ></ion-icon> -->
     </ion-item>
