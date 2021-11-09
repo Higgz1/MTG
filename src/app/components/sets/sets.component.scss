@@ -23,3 +23,15 @@
     font-weight: 500;
     font-size: 13px;
   }
+
+  .email-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #efefef;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
