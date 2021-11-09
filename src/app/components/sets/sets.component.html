@@ -1,6 +1,6 @@
 <ion-list>
   <ion-item-sliding >
-    <ion-item lines="none">
+    <ion-item lines="none" (click)="getCards(set.code)">
       <ion-text >
         <ion-col size="2" (click)="openDetails(m.id)">
           <div class="email-circle" >
