@@ -8,9 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SetsComponent implements OnInit {
   @Input() set: any;
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getCards(code) {
     // console.log(code);
