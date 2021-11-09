@@ -4,7 +4,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)">
   <app-sets *ngFor="let set of sets" [set]="set"></app-sets>
+
+  <ion-fab *ngIf="isShown" slot="fixed" vertical="bottom" horizontal="end" >
+    <ion-fab-button (click)="ScrollToTop()" size="small">
+      <ion-icon name="chevron-up-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

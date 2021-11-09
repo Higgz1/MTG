@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonContent } from '@ionic/angular';
 import { SetsService } from 'src/app/services/sets/sets.service';
+
 
 @Component({
   selector: 'app-home',
@@ -8,6 +10,8 @@ import { SetsService } from 'src/app/services/sets/sets.service';
 })
 export class HomePage implements OnInit {
   sets: any[];
+  public isShown = false;
+  @ViewChild(IonContent, { static: false }) content: IonContent;
 
   
 
@@ -42,5 +46,20 @@ export class HomePage implements OnInit {
       .toUpperCase();
 
     return '#' + '00000'.substring(0, 6 - c.length) + c;
+  }
+
+  fabDisplay(event) {
+    const screenSize = event.target.clientHeight;
+
+    let bottomPosition = screenSize + event.detail.scrollTop;
+    if (bottomPosition >= 1200) {
+      this.isShown = true;
+    } else if (bottomPosition < 1500) {
+      this.isShown = false;
+    }
+  }
+
+  ScrollToTop() {
+    this.content.scrollToTop(1500);
   }
 }
