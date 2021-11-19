@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from '../api/api.service';
 
@@ -6,10 +7,11 @@ import { ApiService } from '../api/api.service';
 })
 export class CardsService {
 
-  constructor(private apiService:ApiService) { }
+  constructor(private http: HttpClient) { }
 
-  getCards(setId){
-    return this.apiService.get('sets/'+ setId +'/booster');
+  getCards(url){
+    return this.http.get(url);
+
   }
 
 }
