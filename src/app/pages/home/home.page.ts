@@ -13,39 +13,27 @@ export class HomePage implements OnInit {
   public isShown = false;
   @ViewChild(IonContent, { static: false }) content: IonContent;
 
-  
 
-  constructor(private setService: SetsService) {}
+
+  constructor(private setService: SetsService) { }
   ngOnInit() {
     this.getSets();
+  }
+
+  ScrollToTop() {
+    this.content.scrollToTop(1500);
   }
 
   getSets() {
     this.setService.getSets().subscribe((setsList) => {
       this.sets = Object.values(setsList)[0];
-      for (let s of this.sets) {
-        // Create a custom color for every email
-        s.color = this.intToRGB(this.hashCode(s.type));
-      }
-      
+      // for (let s of this.sets) {
+      //   // Create a custom color for every email
+      //   s.color = this.intToRGB(this.hashCode(s.type));
+      // }
+
     });
-    
-  }
 
-  private hashCode(str) {
-    var hash = 0;
-    for (var i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-    return hash;
-  }
-
-  private intToRGB(i) {
-    var c = (i & 0x00FFFFFF)
-      .toString(16)
-      .toUpperCase();
-
-    return '#' + '00000'.substring(0, 6 - c.length) + c;
   }
 
   fabDisplay(event) {
@@ -59,7 +47,21 @@ export class HomePage implements OnInit {
     }
   }
 
-  ScrollToTop() {
-    this.content.scrollToTop(1500);
-  }
+
+  // private hashCode(str) {
+  //   var hash = 0;
+  //   for (var i = 0; i < str.length; i++) {
+  //     hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  //   }
+  //   return hash;
+  // }
+
+  // private intToRGB(i) {
+  //   var c = (i & 0x00FFFFFF)
+  //     .toString(16)
+  //     .toUpperCase();
+
+  //   return '#' + '00000'.substring(0, 6 - c.length) + c;
+  // }
+
 }
