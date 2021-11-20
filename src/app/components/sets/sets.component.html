@@ -1,7 +1,6 @@
-<ion-list>
-    <ion-item lines="none" (click)="getCards(set.code)">
+<!-- <ion-item lines="none" (click)="getCards(set.code)">
       <ion-col size="2" >
-        <div class="name-circle" [style.background]="set.color">
+        <div class="name-circle" >
           {{ set.name | slice:0:1 }}
         </div>
       </ion-col>
@@ -11,6 +10,30 @@
       </ion-text>
 
       
-    </ion-item>
+    </ion-item> -->
 
-</ion-list>
+<ion-card>
+
+  <img class="bckgrnd-mask" [src]="set.icon_svg_uri">
+  <ion-card-content>
+    <ion-row>
+      <ion-col size="8">
+        <!-- <h5 class="no">{{set.code}}</h5> -->
+        <h2 class="set-name ">{{set.name}}</h2>
+
+        <div>
+          <ion-badge>
+            {{set.card_count}} cards
+          </ion-badge>
+          <ion-badge>
+            {{set.set_type}}
+          </ion-badge>
+        </div>
+
+      </ion-col>
+      <ion-col size="4">
+        <ion-img [src]="set.icon_svg_uri"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</ion-card>
