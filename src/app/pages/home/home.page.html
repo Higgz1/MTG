@@ -1,10 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Sets</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
-<ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)">
+<ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)" >
+  
   <app-sets *ngFor="let set of sets" [set]="set"></app-sets>
 
   <ion-fab *ngIf="isShown" slot="fixed" vertical="bottom" horizontal="end" >

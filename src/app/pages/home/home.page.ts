@@ -9,9 +9,10 @@ import { SetsService } from 'src/app/services/sets/sets.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  sets: any[];
+  
   public isShown = false;
   @ViewChild(IonContent, { static: false }) content: IonContent;
+  sets: any;
 
 
 
@@ -25,15 +26,15 @@ export class HomePage implements OnInit {
   }
 
   getSets() {
-    this.setService.getSets().subscribe((setsList) => {
-      return this.sets = Object.values(setsList);
+    this.setService.getSets().subscribe((setsList:any) => {
+      this.sets = setsList.data;
+      console.log("sets",this.sets);
       // for (let s of this.sets) {
       //   // Create a custom color for every email
       //   s.color = this.intToRGB(this.hashCode(s.type));
       // }
-
     });
-
+    
   }
 
   fabDisplay(event) {
