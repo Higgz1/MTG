@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
@@ -52,41 +53,109 @@ describe('SetsService', () => {
 
   // Test get all sets
   it('should make get request for sets', () => {
+
+    let actualSets: {} | undefined;
     setService.getSets().subscribe((resp) => {
       succeeded = true;
-      expect(resp).not.toBe({ empty: true });
-      expect(resp).toEqual(mockResponse, 'should return expected results'), fail;
-      expect(succeeded).toBeTrue();
+      actualSets = resp;
     });
 
     const req = httpTestingController.expectOne(baseUrl);
     expect(req.request.method).toEqual('GET');
 
     req.flush(mockResponse);
-
     httpTestingController.verify();
+
+    expect(succeeded).toBeTrue();
+    expect(actualSets).toEqual(mockResponse, 'should return expected results'), fail;
   });
+
 
   // Test get single set based on Id
   it('should get a single set based on Id', () => {
     let id = "aer";
+    let actualSet: {} | undefined;
+
     setService.getSingleSet(id).subscribe((resp) => {
       succeeded = true;
-      expect(resp).not.toBe({ empty: true });
-      expect(resp).toEqual(mockResponse, 'should return expected results'), fail;
-      expect(succeeded).toBeTrue();
+      actualSet = resp;
     });
 
     const req = httpTestingController.expectOne(baseUrl + '/' + id);
     expect(req.request.method).toEqual('GET');
 
     req.flush(mockResponse);
-
     httpTestingController.verify();
+
+    expect(succeeded).toBeTrue();
+    expect(actualSet).toEqual(mockResponse, 'should return expected results'), fail;
   });
 
+  //Testing the error handling of getSets()
+  it('Testing the error handling of getSets()', () => {
+    const status = 500;
+    const statusText = 'Server error';
+    const errorEvent = new ErrorEvent('API error');
 
+    let actualError: HttpErrorResponse | undefined;
 
+    setService.getSets().subscribe(
+      () => {
+        fail('next handler must not be called');
+      },
+      (error) => {
+        actualError = error;
+      },
+      () => {
+        fail('complete handler must not be called');
+      },
+    );
+
+    const req = httpTestingController.expectOne(baseUrl).error(
+      errorEvent,
+      { status, statusText }
+    );
+
+    if (!actualError) {
+      throw new Error('Error needs to be defined');
+    }
+    expect(actualError.error).toBe(errorEvent);
+    expect(actualError.status).toBe(status);
+    expect(actualError.statusText).toBe(statusText);
+  });
+
+  //Testing the error handling of getSet(id)
+  it('Testing the error handling of getSingleSet(id)', () => {
+    const status = 500;
+    const statusText = 'Server error';
+    const errorEvent = new ErrorEvent('API error');
+    let id = "aer";
+    let actualError: HttpErrorResponse | undefined;
+
+    setService.getSingleSet(id).subscribe(
+      () => {
+        fail('next handler must not be called');
+      },
+      (error) => {
+        actualError = error;
+      },
+      () => {
+        fail('complete handler must not be called');
+      },
+    );
+
+    const req = httpTestingController.expectOne(baseUrl + '/' + id).error(
+      errorEvent,
+      { status, statusText }
+    );
+
+    if (!actualError) {
+      throw new Error('Error needs to be defined');
+    }
+    expect(actualError.error).toBe(errorEvent);
+    expect(actualError.status).toBe(status);
+    expect(actualError.statusText).toBe(statusText);
+  });
 
 });
 
