@@ -26,7 +26,7 @@ export class HomePage implements OnInit {
 
   getSets() {
     this.setService.getSets().subscribe((setsList) => {
-      this.sets = Object.values(setsList)[0];
+      return this.sets = Object.values(setsList);
       // for (let s of this.sets) {
       //   // Create a custom color for every email
       //   s.color = this.intToRGB(this.hashCode(s.type));
