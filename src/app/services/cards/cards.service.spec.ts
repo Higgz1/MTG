@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+
 
 import { CardsService } from './cards.service';
 
@@ -153,21 +155,55 @@ describe('CardsService', () => {
   });
 
   // Test get cards based on sets
-
   it('should get cards  based on setId', () => {
+
+    let cards: {} | undefined;
+
     cardService.getCards(setsUrl).subscribe((resp) => {
       succeeded = true;
-      expect(resp).not.toBe({ empty: true });
-      expect(resp).toEqual(mockResponse, 'should return expected results'), fail;
-      expect(succeeded).toBeTrue();
+      cards = resp;
     });
 
     const req = httpTestingController.expectOne(setsUrl);
     expect(req.request.method).toEqual('GET');
 
     req.flush(mockResponse);
-
     httpTestingController.verify();
+
+    expect(cards).toEqual(mockResponse, 'should return expected results'), fail;
+    expect(succeeded).toBeTrue();
+  });
+
+  //Testing the error handling of getCards(id)
+  it('Testing the error handling of getCards(url)', () => {
+    const status = 500;
+    const statusText = 'Server error';
+    const errorEvent = new ErrorEvent('API error');
+    let actualError: HttpErrorResponse | undefined;
+ 
+    cardService.getCards(setsUrl).subscribe(
+      () => {
+        fail('next handler must not be called');
+      },
+      (error) => {
+        actualError = error;
+      },
+      () => {
+        fail('complete handler must not be called');
+      },
+    );
+
+    const req = httpTestingController.expectOne(setsUrl).error(
+      errorEvent,
+      { status, statusText }
+    );
+
+    if (!actualError) {
+      throw new Error('Error needs to be defined');
+    }
+    expect(actualError.error).toBe(errorEvent);
+    expect(actualError.status).toBe(status);
+    expect(actualError.statusText).toBe(statusText);
   });
 
 });
