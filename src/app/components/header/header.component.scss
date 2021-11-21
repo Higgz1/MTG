@@ -2,8 +2,25 @@
   padding: 0 1rem;
 }
 
+// ion-toolbar {
+//   // --background: rgba(0,0,0,0);
+// }
+
+
 ion-searchbar {
     --background: rgba(0,0,0,.04);
     // --box-shadow: none;
     --border-radius: 6px;
+  }
+
+  .portrait {
+    height: 200px;
+    width: 90%;
+    left: 3px;
+    transform: scale(1.2, 1.2);
+    opacity: .2;
+    position: absolute;
+    top: -115px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1.90), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.90), rgba(0,0,0,0));
   }
