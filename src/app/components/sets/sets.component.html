@@ -1,17 +1,3 @@
-<!-- <ion-item lines="none" (click)="getCards(set.code)">
-      <ion-col size="2" >
-        <div class="name-circle" >
-          {{ set.name | slice:0:1 }}
-        </div>
-      </ion-col>
-      <ion-text >
-        <h5 class="set-name">{{set.name}}</h5>
-        <p class="set-block">{{set.block || 'No Block'}} |  {{set.type || 'No Block'}} |  {{set.releaseDate | date :  "MMM.yyyy"}}</p>
-      </ion-text>
-
-      
-    </ion-item> -->
-
 <ion-card>
 
   <img class="bckgrnd-mask" [src]="set.icon_svg_uri">
@@ -22,12 +8,18 @@
         <h2 class="set-name ">{{set.name}}</h2>
 
         <div>
-          <ion-badge>
+          <ion-badge class="first-badge">
             {{set.card_count}} cards
           </ion-badge>
-          <ion-badge>
+          <ion-badge class="second-badge">
             {{set.set_type}}
           </ion-badge>
+        </div>
+        <!-- <ion-badge class="second-badge">
+          {{set.released_at | date :  "MMM.yyyy"}}
+        </ion-badge> -->
+        <div>
+
         </div>
 
       </ion-col>
