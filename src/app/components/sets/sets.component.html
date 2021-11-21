@@ -1,6 +1,6 @@
 <ion-card>
 
-  <img class="bckgrnd-mask" [src]="set.icon_svg_uri">
+  <!-- <img class="bckgrnd-mask" [src]="set.icon_svg_uri"> -->
   <ion-card-content>
     <ion-row>
       <ion-col size="8">
@@ -11,7 +11,7 @@
           <ion-badge class="first-badge">
             {{set.card_count}} cards
           </ion-badge>
-          <ion-badge class="second-badge">
+          <ion-badge class="second-badge" [style.background]="set.color">
             {{set.set_type}}
           </ion-badge>
         </div>

@@ -28,11 +28,12 @@ export class HomePage implements OnInit {
   getSets() {
     this.setService.getSets().subscribe((setsList:any) => {
       this.sets = setsList.data;
+      for (let s of this.sets) {
+        // Create a custom color for every email
+        s.color = this.intToRGB(this.hashCode(s.set_type));
+      }
       console.log("sets",this.sets);
-      // for (let s of this.sets) {
-      //   // Create a custom color for every email
-      //   s.color = this.intToRGB(this.hashCode(s.type));
-      // }
+
     });
     
   }
@@ -49,20 +50,20 @@ export class HomePage implements OnInit {
   }
 
 
-  // private hashCode(str) {
-  //   var hash = 0;
-  //   for (var i = 0; i < str.length; i++) {
-  //     hash = str.charCodeAt(i) + ((hash << 5) - hash);
-  //   }
-  //   return hash;
-  // }
+  private hashCode(str) {
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return hash;
+  }
 
-  // private intToRGB(i) {
-  //   var c = (i & 0x00FFFFFF)
-  //     .toString(16)
-  //     .toUpperCase();
+  private intToRGB(i) {
+    var c = (i & 0x00FFFFFF)
+      .toString(16)
+      .toUpperCase();
 
-  //   return '#' + '00000'.substring(0, 6 - c.length) + c;
-  // }
+    return '#' + '00000'.substring(0, 6 - c.length) + c;
+  }
 
 }

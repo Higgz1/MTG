@@ -52,7 +52,7 @@ ion-col {
     bottom: 27px;
     width: 110px;
     height: 100px;
-    right: 5px;
+    right: -10px;
     opacity: 0.7; 
   //   mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0));
   // -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.959), rgba(0, 0, 0, 0));
@@ -66,15 +66,17 @@ ion-col {
   position: absolute;
   height: 110px;
   bottom: 0px;
-  left: 207px;
+  left: 250px;
   mask-image: linear-gradient(to top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
   -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+
 
 }
 
 .set-name {
   color:black;
   font-weight: bold;
+  margin-left: -7px;
 }
 
 .no {
@@ -85,9 +87,10 @@ ion-col {
 
 .first-badge{
   margin-top: 6px;
-  margin-left: 5px;
+  margin-left: -7px;
   background: #cc3414;
   opacity: 0.8; 
+
 
 }
 
