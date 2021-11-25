@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular';
 import { SetsService } from 'src/app/services/sets/sets.service';
 import { CardsService } from '../../services/cards/cards.service';
@@ -14,6 +15,7 @@ export class HomePage implements OnInit {
   sets: any;
 
   constructor(
+    private router: Router,
     private setService: SetsService,
     private cardsService: CardsService
   ) {}
@@ -37,9 +39,10 @@ export class HomePage implements OnInit {
   }
 
   getCards(uri) {
-    this.cardsService.getCards(uri).subscribe((cards) => {
-      const the_cards = cards;
-    });
+    // this.cardsService.getCards(uri).subscribe((cards) => {
+    //   const the_cards = cards;
+    // });
+    this.router.navigate(['/card-list']);
   }
 
   fabDisplay(event) {
