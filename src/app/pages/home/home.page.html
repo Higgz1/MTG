@@ -1,8 +1,30 @@
-<app-header></app-header>
+<ion-header translucent="true" class="ion-no-border">
+  <img  class="portrait" src="assets/mtg.png" alt=""/>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>MTG Sets</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="options-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar> 
+
+  <div class="titles">
+    <!-- <h4>MTG Sets</h4> -->
+    <ion-card-subtitle>Search for MTG sets .</ion-card-subtitle>
+
+    <ion-searchbar class="ion-no-padding ion-padding-top"></ion-searchbar>
+  </div>
+</ion-header>
 
 <ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)" >
   
-  <app-sets *ngFor="let set of sets" [set]="set"></app-sets>
+  <app-sets *ngFor="let set of sets" [set]="set" (click)="getCards()"></app-sets>
 
   <ion-fab *ngIf="isShown" slot="fixed" vertical="bottom" horizontal="end" >
     <ion-fab-button (click)="ScrollToTop()" color="secondary" size="small">
