@@ -39,10 +39,7 @@ export class HomePage implements OnInit {
   }
 
   getCards(uri) {
-    // this.cardsService.getCards(uri).subscribe((cards) => {
-    //   const the_cards = cards;
-    // });
-    this.router.navigate(['/card-list']);
+    this.router.navigate(['/card-list', { uri: JSON.stringify(uri) }]);
   }
 
   fabDisplay(event) {
