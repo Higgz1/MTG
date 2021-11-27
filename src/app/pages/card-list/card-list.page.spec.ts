@@ -44,11 +44,10 @@ describe('CardListPage', () => {
   it('on page enter make a fetch request to get cards', () => {
     // fixture.detectChanges();
     spyOn(cardsComponent, 'getCards').and.callThrough();
-    const uri =
-      'https://api.scryfall.com/cards/search?order=set&q=e%3Apmid&unique=prints';
+    const uri = 'https://api.scryfall.com/cards/search?order=set&q=e%3Apmid&unique=prints';
     cardsComponent.ionViewDidEnter();
     expect(cardsComponent.getCards).toHaveBeenCalledTimes(1);
-    expect(fakecardsService.getCards).toHaveBeenCalled();
+    expect(fakecardsService.getCards).toHaveBeenCalledTimes(1);
   });
 
   // it('When getCards() is called it should get the response from the service ', () => {
