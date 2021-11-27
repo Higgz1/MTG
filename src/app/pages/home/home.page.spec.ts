@@ -99,13 +99,13 @@ describe('HomePage', () => {
     expect(childComponents().length).toEqual(homeComponent.sets.length);
   });
 //change this to routing
-  it('on clicking (app-sets) it should call a function getCards()', () => {
-    // fixture.detectChanges();
-    // const uri = 'https://api.scryfall.com/cards/search?order=set&q=e%3Apmid&unique=prints';
-    // const card = fixture.debugElement.nativeElement.querySelector('app-sets');
-    // card.click();
-    // homeComponent.getCards(uri);
-  });
+  // it('on clicking (app-sets) it should call a function getCards()', () => {
+  //   fixture.detectChanges();
+  //   const uri = 'https://api.scryfall.com/cards/search?order=set&q=e%3Apmid&unique=prints';
+  //   const card = fixture.debugElement.nativeElement.querySelector('app-sets');
+  //   card.click();
+  //   homeComponent.getCards(uri);
+  // });
 
   //find component within the parent DOM
   function findComponent<T>(
