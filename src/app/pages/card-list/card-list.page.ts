@@ -15,7 +15,7 @@ export class CardListPage implements OnInit {
     private cardsService: CardsService,
     private route: ActivatedRoute
   ) {
-    // this.cardUri = JSON.parse(this.route.snapshot.paramMap.get('uri'));
+    this.cardUri = JSON.parse(this.route.snapshot.paramMap.get('uri'));
   }
 
   ngOnInit() {}
@@ -27,10 +27,9 @@ export class CardListPage implements OnInit {
   getCards() {
     // console.log('cards',this.cardUri);
 
-    this.cardsService.getCards(this.cardUri).subscribe((cards) => {
-      this.cards = cards;
-    console.log('cards',this.cards);
-
+    this.cardsService.getCards(this.cardUri).subscribe((cards:any) => {
+      this.cards = cards.data;
+      console.log('cards', this.cards);
     });
     // console.log('cards',this.cards);
   }
