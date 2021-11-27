@@ -1,3 +1,4 @@
-<p>
-  cards works!
-</p>
+<ion-card>
+  <!-- if single card face -->
+  <ion-img *ngIf="!card.card_faces" [src]="card.image_uris.large"></ion-img>
+</ion-card>
