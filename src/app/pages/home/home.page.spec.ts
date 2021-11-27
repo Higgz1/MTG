@@ -13,6 +13,7 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { of } from 'rxjs';
+import {RouterTestingModule} from "@angular/router/testing";
 import { HomePage } from './home.page';
 import { SetsService } from 'src/app/services/sets/sets.service';
 import { CardsService } from 'src/app/services/cards/cards.service';
@@ -38,7 +39,7 @@ describe('HomePage', () => {
 
       TestBed.configureTestingModule({
         declarations: [HomePage, MockComponent(SetsComponent)],
-        imports: [IonicModule.forRoot(), HttpClientTestingModule],
+        imports: [IonicModule.forRoot(), HttpClientTestingModule,RouterTestingModule],
         // Use fake instead of original
         providers: [{ provide: SetsService, useValue: fakesetsService },{ provide: CardsService, useValue: fakecardsService }],
       }).compileComponents();
@@ -98,14 +99,13 @@ describe('HomePage', () => {
     expect(childComponents().length).toEqual(homeComponent.sets.length);
   });
 //change this to routing
-  // it('on clicking (app-sets) it should call a function getCards()', () => {
-  //   fixture.detectChanges();
-  //   const uri = 'https://api.scryfall.com/cards/search?order=set&q=e%3Apmid&unique=prints';
-  //   const card = fixture.debugElement.nativeElement.querySelector('app-sets');
-  //   card.click();
-  //   homeComponent.getCards(uri);
-  //   expect(fakecardsService.getCards).toHaveBeenCalledWith(uri);
-  // });
+  it('on clicking (app-sets) it should call a function getCards()', () => {
+    // fixture.detectChanges();
+    // const uri = 'https://api.scryfall.com/cards/search?order=set&q=e%3Apmid&unique=prints';
+    // const card = fixture.debugElement.nativeElement.querySelector('app-sets');
+    // card.click();
+    // homeComponent.getCards(uri);
+  });
 
   //find component within the parent DOM
   function findComponent<T>(
