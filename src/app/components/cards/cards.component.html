@@ -1,4 +1,124 @@
 <ion-card>
-  <!-- if single card face -->
-  <ion-img *ngIf="card.layout == 'normal' " [src]="card.image_uris.large"></ion-img>
+  <!-- Normal -->
+  <ion-img class="card" *ngIf="card.layout == 'normal' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Leveler -->
+  <ion-img class="card" *ngIf="card.layout == 'leveler' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Saga -->
+  <ion-img class="card" *ngIf="card.layout == 'saga' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Adventure -->
+  <ion-img class="card" *ngIf="card.layout == 'adventure' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Scheme -->
+  <ion-img class="card" *ngIf="card.layout == 'scheme' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Class -->
+  <ion-img class="card" *ngIf="card.layout == 'class' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Split-->
+  <ion-img class="card" *ngIf="card.layout == 'split' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Flip-->
+  <ion-img class="card" *ngIf="card.layout == 'flip' " [src]="card.image_uris.normal"></ion-img>
+
+  <!-- Transform-->
+  <div class="card" *ngIf="card.layout == 'transform' ">
+
+    <div class="card__face card__face--front">
+      <ion-img [src]="card.card_faces[0].image_uris.normal"></ion-img>
+    </div>
+
+    <div class="card__face card__face--back">
+      <ion-img [src]="card.card_faces[1].image_uris.normal"></ion-img>
+    </div>
+  </div>
+
+  <!-- modal_dfc-->
+  <div class="card" *ngIf="card.layout == 'modal_dfc' ">
+
+    <div class="card__face card__face--front">
+      <ion-img [src]="card.card_faces[0].image_uris.normal"></ion-img>
+    </div>
+
+    <div class="card__face card__face--back">
+      <ion-img [src]="card.card_faces[1].image_uris.normal"></ion-img>
+    </div>
+  </div>
+
+  <!-- art_series-->
+  <div class="card"  *ngIf="card.layout == 'art_series' ">
+
+    <div class="card__face card__face--front">
+      <ion-img [src]="card.card_faces[0].image_uris.normal"></ion-img>
+    </div>
+
+    <div class="card__face card__face--back">
+      <ion-img [src]="card.card_faces[1].image_uris.normal"></ion-img>
+    </div>
+  </div>
+
+  <!-- Double_faced_token-->
+  <div class="card" *ngIf="card.layout == 'double_faced_token' ">
+
+    <div class="card__face card__face--front">
+      <ion-img [src]="card.card_faces[0].image_uris.normal"></ion-img>
+    </div>
+
+    <div class="card__face card__face--back">
+      <ion-img [src]="card.card_faces[1].image_uris.normal"></ion-img>
+    </div>
+  </div>
+
+  <!-- FAB, Double_faced_token Layout  -->
+  <div>
+    <ion-fab *ngIf="card.layout == 'double_faced_token' " horizontal="end" vertical="center" slot="fixed"
+      (click)="flipToken(card)">
+      <ion-fab-button color="light" style="opacity: 0.7;">
+        <ion-icon name="repeat-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <!-- FAB, Transform Layout  -->
+  <div>
+    <ion-fab *ngIf="card.layout == 'transform' " horizontal="end" vertical="center" slot="fixed"
+      (click)="flipTransform(card)">
+      <ion-fab-button color="light" style="opacity: 0.7;">
+        <ion-icon name="repeat-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <!-- FAB, Flip Layout Cards -->
+  <div>
+    <ion-fab *ngIf="card.layout == 'flip' " horizontal="end" vertical="center" slot="fixed" (click)="flipCard(card)">
+      <ion-fab-button color="light" style="opacity: 0.7;">
+        <ion-icon name="swap-vertical-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <!-- FAB, modal_dfc Layout Cards -->
+  <div>
+    <ion-fab *ngIf="card.layout == 'modal_dfc' " horizontal="end" vertical="center" slot="fixed"
+      (click)="modal_dfc(card)">
+      <ion-fab-button color="light" style="opacity: 0.7;">
+        <ion-icon name="swap-vertical-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+  <!-- FAB, art_series Layout Cards -->
+  <div *ngIf="card.layout == 'art_series'">
+    <ion-fab horizontal="end" vertical="center" slot="fixed"
+      (click)="art_series(card)">
+      <ion-fab-button color="light" style="opacity: 0.7;">
+        <ion-icon name="repeat-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+
+
 </ion-card>
