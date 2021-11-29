@@ -30,10 +30,30 @@ describe('SetsService', () => {
         "nonfoil_only": false,
         "foil_only": false,
         "icon_svg_uri": "https://c2.scryfall.com/file/scryfall-symbols/sets/cc2.svg?1636952400"
+      }, {
+        "object": "set",
+        "id": "a4a0db50-8826-4e73-833c-3fd934375f96",
+        "code": "aer",
+        "mtgo_code": "aer",
+        "arena_code": "aer",
+        "tcgplayer_id": 1857,
+        "name": "Aether Revolt",
+        "uri": "https://api.scryfall.com/sets/a4a0db50-8826-4e73-833c-3fd934375f96",
+        "scryfall_uri": "https://scryfall.com/sets/aer",
+        "search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints",
+        "released_at": "2017-01-20",
+        "set_type": "expansion",
+        "card_count": 194,
+        "printed_size": 184,
+        "digital": false,
+        "nonfoil_only": false,
+        "foil_only": false,
+        "block_code": "kld",
+        "block": "Kaladesh",
+        "icon_svg_uri": "https://c2.scryfall.com/file/scryfall-symbols/sets/aer.svg?1637557200"
       }
     ]
   }
-
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -45,54 +65,57 @@ describe('SetsService', () => {
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
+  afterEach(() => {
+    // console.log('verified');
+    httpTestingController.verify();
+  });
 
   it('should be created', () => {
     expect(setService).toBeTruthy();
   });
 
-
   // Test get all sets
-  it('should make get request for sets', () => {
+  it('should retrieve all sets', () => {
 
     let actualSets: {} | undefined;
     setService.getSets().subscribe((resp) => {
+
       succeeded = true;
       actualSets = resp;
+
+      expect(succeeded).toBeTrue();
+      expect(actualSets).toBeTruthy('No sets were returned');
+      expect(actualSets).toEqual(mockResponse, 'should return expected results'), fail;
     });
 
     const req = httpTestingController.expectOne(baseUrl);
     expect(req.request.method).toEqual('GET');
-
     req.flush(mockResponse);
-    httpTestingController.verify();
-
-    expect(succeeded).toBeTrue();
-    expect(actualSets).toEqual(mockResponse, 'should return expected results'), fail;
   });
-
 
   // Test get single set based on Id
   it('should get a single set based on Id', () => {
-    let id = "aer";
-    let actualSet: {} | undefined;
+    let code = "aer";
 
-    setService.getSingleSet(id).subscribe((resp) => {
+    setService.getSingleSet(code).subscribe((resp: any) => {
       succeeded = true;
-      actualSet = resp;
+      const actualSet = resp;
+
+      expect(succeeded).toBeTrue();
+      expect(actualSet).toEqual(mockResponse.data[1], 'should return expected results'), fail;
+      expect(actualSet.code).toEqual(code, 'should return expected results'), fail;
+
     });
 
-    const req = httpTestingController.expectOne(baseUrl + '/' + id);
+    const req = httpTestingController.expectOne(baseUrl + '/' + code);
     expect(req.request.method).toEqual('GET');
 
-    req.flush(mockResponse);
-    httpTestingController.verify();
+    req.flush(mockResponse.data[1]);
 
-    expect(succeeded).toBeTrue();
-    expect(actualSet).toEqual(mockResponse, 'should return expected results'), fail;
   });
 
   //Testing the error handling of getSets()
-  it('Testing the error handling of getSets()', () => {
+  it('should give an error if getSets() fails', () => {
     const status = 500;
     const statusText = 'Server error';
     const errorEvent = new ErrorEvent('API error');
@@ -105,6 +128,9 @@ describe('SetsService', () => {
       },
       (error) => {
         actualError = error;
+        expect(actualError.error).toBe(errorEvent);
+        expect(actualError.status).toBe(status);
+        expect(actualError.statusText).toBe(statusText);
       },
       () => {
         fail('complete handler must not be called');
@@ -119,25 +145,27 @@ describe('SetsService', () => {
     if (!actualError) {
       throw new Error('Error needs to be defined');
     }
-    expect(actualError.error).toBe(errorEvent);
-    expect(actualError.status).toBe(status);
-    expect(actualError.statusText).toBe(statusText);
   });
 
   //Testing the error handling of getSet(id)
-  it('Testing the error handling of getSingleSet(id)', () => {
+  it('should give an error if getSingleSet(code) fails', () => {
     const status = 500;
     const statusText = 'Server error';
     const errorEvent = new ErrorEvent('API error');
-    let id = "aer";
-    let actualError: HttpErrorResponse | undefined;
+    let id = "aer",
+      actualError: HttpErrorResponse | undefined;
 
     setService.getSingleSet(id).subscribe(
       () => {
-        fail('next handler must not be called');
+        fail('the get by code opertaion should have failed');
       },
-      (error) => {
+      (error: HttpErrorResponse) => {
         actualError = error;
+        expect(actualError.error).toBe(errorEvent);
+        expect(actualError.status).toBe(status);
+        expect(actualError.statusText).toBe(statusText);
+
+
       },
       () => {
         fail('complete handler must not be called');
@@ -152,9 +180,7 @@ describe('SetsService', () => {
     if (!actualError) {
       throw new Error('Error needs to be defined');
     }
-    expect(actualError.error).toBe(errorEvent);
-    expect(actualError.status).toBe(status);
-    expect(actualError.statusText).toBe(statusText);
+
   });
 
 });
