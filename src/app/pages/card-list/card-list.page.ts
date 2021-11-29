@@ -8,7 +8,7 @@ import { CardsService } from 'src/app/services/cards/cards.service';
   styleUrls: ['./card-list.page.scss'],
 })
 export class CardListPage implements OnInit {
-  cards: Object;
+  cards: any;
   cardUri: any;
 
   constructor(
@@ -18,19 +18,22 @@ export class CardListPage implements OnInit {
     this.cardUri = JSON.parse(this.route.snapshot.paramMap.get('uri'));
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ionViewDidEnter() {
     this.getCards();
   }
 
   getCards() {
-    // console.log('cards',this.cardUri);
 
-    this.cardsService.getCards(this.cardUri).subscribe((cards:any) => {
+    this.cardsService.getCards(this.cardUri).subscribe((cards: any) => {
       this.cards = cards.data;
+      //adding index property to cards list
+      for (let c of this.cards) {
+        c.index = this.cards.indexOf(c);
+      }
       console.log('cards', this.cards);
     });
-    // console.log('cards',this.cards);
+
   }
 }
