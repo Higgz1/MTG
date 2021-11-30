@@ -34,7 +34,7 @@ export class CardsComponent implements OnInit {
   }
 
   modal_dfc(item) {
-    const flip_card = document.body.querySelectorAll('.modal_dfc')[item.index];
+    const flip_card = document.body.querySelectorAll('.card')[item.index];
     flip_card.classList.toggle('is-flipped');
   }
 
