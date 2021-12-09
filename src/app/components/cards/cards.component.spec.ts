@@ -12,32 +12,29 @@ describe('CardsComponent', () => {
   const mockResponse = {
     data: [
       {
-        object: 'card',
-        id: '5aa90ab6-2686-4462-8725-5d4370c05437',
-        oracle_id: '4e536142-4ebe-4062-887b-5dd123c41d39',
-        multiverse_ids: [74252],
-        tcgplayer_id: 37817,
-        cardmarket_id: 14786,
-        name: '_____',
-        lang: 'en',
-        released_at: '2004-11-19',
-        uri: 'https://api.scryfall.com/cards/5aa90ab6-2686-4462-8725-5d4370c05437',
-        scryfall_uri: 'https://scryfall.com/card/unh/23/_____?utm_source=api',
-        layout: 'normal',
-        highres_image: true,
-        image_status: 'highres_scan',
-        image_uris: {
-          small:
-            'https://c1.scryfall.com/file/scryfall-cards/small/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486',
-          normal:
-            'https://c1.scryfall.com/file/scryfall-cards/normal/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486',
-          large:
-            'https://c1.scryfall.com/file/scryfall-cards/large/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486',
-          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.png?1630393486',
-          art_crop:
-            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486',
-          border_crop:
-            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486',
+        "object": "card",
+        "id": "5aa90ab6-2686-4462-8725-5d4370c05437",
+        "oracle_id": "4e536142-4ebe-4062-887b-5dd123c41d39",
+        "multiverse_ids": [
+          74252
+        ],
+        "tcgplayer_id": 37817,
+        "cardmarket_id": 14786,
+        "name": "_____",
+        "lang": "en",
+        "released_at": "2004-11-19",
+        "uri": "https://api.scryfall.com/cards/5aa90ab6-2686-4462-8725-5d4370c05437",
+        "scryfall_uri": "https://scryfall.com/card/unh/23/_____?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486",
+          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486",
+          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486",
+          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.png?1630393486",
+          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486",
+          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/a/5aa90ab6-2686-4462-8725-5d4370c05437.jpg?1630393486"
         }
       },
       {
@@ -92,6 +89,167 @@ describe('CardsComponent', () => {
           "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/8/58164521-aeec-43fc-9db9-d595432dea6f.jpg?1592710828",
           "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/8/58164521-aeec-43fc-9db9-d595432dea6f.jpg?1592710828"
         }
+      },
+      {
+        "object": "card",
+        "id": "8093f8b0-5d50-48ca-b616-e92535a47138",
+        "oracle_id": "80b07882-e144-4815-8b6f-04b3ab343d97",
+        "multiverse_ids": [
+          409843,
+          409844
+        ],
+        "mtgo_id": 60370,
+        "mtgo_foil_id": 60371,
+        "tcgplayer_id": 116486,
+        "cardmarket_id": 289120,
+        "name": "Accursed Witch // Infectious Curse",
+        "lang": "en",
+        "released_at": "2016-04-08",
+        "uri": "https://api.scryfall.com/cards/8093f8b0-5d50-48ca-b616-e92535a47138",
+        "scryfall_uri": "https://scryfall.com/card/soi/97/accursed-witch-infectious-curse?utm_source=api",
+        "layout": "transform",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "cmc": 4.0,
+        "type_line": "Creature — Human Shaman // Enchantment — Aura Curse",
+        "color_identity": [
+          "B"
+        ],
+        "keywords": [
+          "Enchant"
+        ],
+        "card_faces": [
+          {
+            "object": "card_face",
+            "name": "Accursed Witch",
+            "flavor_name": "",
+            "mana_cost": "{3}{B}",
+            "type_line": "Creature — Human Shaman",
+            "oracle_text": "Spells your opponents cast that target Accursed Witch cost {1} less to cast.\nWhen Accursed Witch dies, return it to the battlefield transformed under your control attached to target opponent.",
+            "colors": [
+              "B"
+            ],
+            "power": "4",
+            "toughness": "2",
+            "artist": "Wesley Burt",
+            "artist_id": "b98c9d94-8bdb-49af-871d-7bac92274535",
+            "illustration_id": "e648ea98-8935-4b00-b3d9-d4d1e98026d8",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.png?1576384328",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328"
+            }
+          },
+          {
+            "object": "card_face",
+            "name": "Infectious Curse",
+            "flavor_name": "",
+            "mana_cost": "",
+            "type_line": "Enchantment — Aura Curse",
+            "oracle_text": "Enchant player\nSpells you cast that target enchanted player cost {1} less to cast.\nAt the beginning of enchanted player's upkeep, that player loses 1 life and you gain 1 life.",
+            "colors": [
+              "B"
+            ],
+            "color_indicator": [
+              "B"
+            ],
+            "artist": "Wesley Burt",
+            "artist_id": "b98c9d94-8bdb-49af-871d-7bac92274535",
+            "illustration_id": "828863bf-ddb7-4719-bcfd-2a20c667829f",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.png?1576384328",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/back/8/0/8093f8b0-5d50-48ca-b616-e92535a47138.jpg?1576384328"
+            }
+          }
+        ]
+      },
+      {
+        "object": "card",
+        "id": "5d131784-c1a3-463e-a37b-b720af67ab62",
+        "oracle_id": "0a69c3dd-52a3-4ef6-b53f-b0780e0dc5f8",
+        "multiverse_ids": [
+          503646,
+          503647
+        ],
+        "mtgo_id": 87403,
+        "arena_id": 75077,
+        "tcgplayer_id": 230095,
+        "cardmarket_id": 529372,
+        "name": "Alrund, God of the Cosmos // Hakka, Whispering Raven",
+        "lang": "en",
+        "released_at": "2021-02-05",
+        "uri": "https://api.scryfall.com/cards/5d131784-c1a3-463e-a37b-b720af67ab62",
+        "scryfall_uri": "https://scryfall.com/card/khm/40/alrund-god-of-the-cosmos-hakka-whispering-raven?utm_source=api",
+        "layout": "modal_dfc",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "cmc": 5.0,
+        "type_line": "Legendary Creature — God // Legendary Creature — Bird",
+        "color_identity": [
+          "U"
+        ],
+        "keywords": [
+          "Scry",
+          "Flying"
+        ],
+        "card_faces": [
+          {
+            "object": "card_face",
+            "name": "Alrund, God of the Cosmos",
+            "flavor_name": "",
+            "mana_cost": "{3}{U}{U}",
+            "type_line": "Legendary Creature — God",
+            "oracle_text": "Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile.\nAt the beginning of your end step, choose a card type, then reveal the top two cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order.",
+            "colors": [
+              "U"
+            ],
+            "power": "1",
+            "toughness": "1",
+            "artist": "Kieran Yanner",
+            "artist_id": "aa7e89ed-d294-4633-9057-ce04dacfcfa4",
+            "illustration_id": "7f3f962c-c543-4879-aa67-8ba75aa182a8",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.png?1631046568",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568"
+            }
+          },
+          {
+            "object": "card_face",
+            "name": "Hakka, Whispering Raven",
+            "flavor_name": "",
+            "mana_cost": "{1}{U}",
+            "type_line": "Legendary Creature — Bird",
+            "oracle_text": "Flying\nWhenever Hakka, Whispering Raven deals combat damage to a player, return it to its owner's hand, then scry 2.",
+            "colors": [
+              "U"
+            ],
+            "power": "2",
+            "toughness": "3",
+            "flavor_text": "Alrund's raven soars between realms; no secret is beyond his grasp.",
+            "artist": "Kieran Yanner",
+            "artist_id": "aa7e89ed-d294-4633-9057-ce04dacfcfa4",
+            "illustration_id": "580be266-5f4c-4c30-adbd-58993cf8149f",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/back/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/back/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/back/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/back/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.png?1631046568",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/back/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/back/5/d/5d131784-c1a3-463e-a37b-b720af67ab62.jpg?1631046568"
+            }
+          }
+        ]
       }
     ],
   };
@@ -162,12 +320,56 @@ describe('CardsComponent', () => {
 
 
     expect(flipCard).toBeTruthy("Could not find card");
-    expect(fab).toBeTruthy("Could not find fab");
+    expect(fab).toBeTruthy("Could not find FAB");
     expect(img.nativeElement.src).toBe(cardsListcomponent.card.image_uris.normal);
 
   });
 
-  //Transform card and FAB
 
+  //Transform card and FAB
+  it('should create Transform card and FAB button', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'transform'
+    )[0];
+
+    fixture.detectChanges();
+
+    const transformCard = el.queryAll(By.css('.card')),
+      fab = el.queryAll(By.css('ion-fab')),
+      transform_front = transformCard[0].query(By.css('ion-img.first')),
+      transform_back = transformCard[0].query(By.css('ion-img.back'));
+
+    expect(transformCard).toBeTruthy("Could not find card");
+    expect(fab).toBeTruthy("Could not find FAB");
+    expect(transform_front.nativeElement.src).toBe(cardsListcomponent.card.card_faces[0].image_uris.normal);
+    expect(transform_back.nativeElement.src).toBe(cardsListcomponent.card.card_faces[1].image_uris.normal);
+
+
+
+  });
+
+  //Modal_dfc
+  fit('should create Modal_dfc card and FAB button', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'modal_dfc'
+    )[0];
+
+    fixture.detectChanges();
+
+    const modalCard = el.queryAll(By.css('.card')),
+      fab = el.queryAll(By.css('ion-fab')),
+      modal_front = modalCard[0].query(By.css('ion-img.first')),
+      modal_back = modalCard[0].query(By.css('ion-img.back'));
+
+    expect(modalCard).toBeTruthy("Could not find card");
+    expect(fab).toBeTruthy("Could not find FAB");
+    expect(modal_front.nativeElement.src).toBe(cardsListcomponent.card.card_faces[0].image_uris.normal);
+    expect(modal_back.nativeElement.src).toBe(cardsListcomponent.card.card_faces[1].image_uris.normal);
+
+
+
+  });
+
+  //Meld
 
 });
