@@ -449,6 +449,33 @@ describe('CardsComponent', () => {
             'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.jpg?1562917989',
         },
       },
+      {
+        object: 'card',
+        id: 'e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc',
+        oracle_id: '40c64f08-ab2f-4933-8e0e-d1a1c729008f',
+        multiverse_ids: [],
+        name: 'Angel',
+        lang: 'en',
+        released_at: '2021-11-19',
+        uri: 'https://api.scryfall.com/cards/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc',
+        scryfall_uri: 'https://scryfall.com/card/tvoc/2/angel?utm_source=api',
+        layout: 'token',
+        highres_image: false,
+        image_status: 'lowres',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.jpg?1637376773',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.jpg?1637376773',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.jpg?1637376773',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.png?1637376773',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.jpg?1637376773',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.jpg?1637376773',
+        },
+      },
     ],
   };
 
@@ -654,7 +681,7 @@ describe('CardsComponent', () => {
   });
 
   // vanguard card
-  fit('should create vanguard card', () => {
+  it('should create vanguard card', () => {
     cardsListcomponent.card = mockResponse.data.filter(
       (card) => card.layout == 'vanguard'
     )[0];
@@ -665,6 +692,23 @@ describe('CardsComponent', () => {
       img = vanguardCard[0].query(By.css('ion-img'));
 
     expect(vanguardCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
+  // token card
+  fit('should create token card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'token'
+    )[0];
+
+    fixture.detectChanges();
+
+    const tokenCard = el.queryAll(By.css('ion-card')),
+      img = tokenCard[0].query(By.css('ion-img'));
+
+    expect(tokenCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
       cardsListcomponent.card.image_uris.normal
     );
