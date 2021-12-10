@@ -420,6 +420,35 @@ describe('CardsComponent', () => {
             'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.jpg?1562252706',
         },
       },
+      {
+        object: 'card',
+        id: '61b07ae0-44f5-4ffe-a33b-96885d4fc26b',
+        oracle_id: 'eaa10dee-89da-43eb-b339-1cf59e488344',
+        multiverse_ids: [182290],
+        mtgo_id: 19,
+        name: 'Akroma, Angel of Wrath Avatar',
+        lang: 'en',
+        released_at: '2003-01-01',
+        uri: 'https://api.scryfall.com/cards/61b07ae0-44f5-4ffe-a33b-96885d4fc26b',
+        scryfall_uri:
+          'https://scryfall.com/card/pmoa/33/akroma-angel-of-wrath-avatar?utm_source=api',
+        layout: 'vanguard',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.jpg?1562917989',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.jpg?1562917989',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.jpg?1562917989',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.png?1562917989',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.jpg?1562917989',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/6/1/61b07ae0-44f5-4ffe-a33b-96885d4fc26b.jpg?1562917989',
+        },
+      },
     ],
   };
 
@@ -608,7 +637,7 @@ describe('CardsComponent', () => {
   });
 
   // scheme card
-  fit('should create scheme card', () => {
+  it('should create scheme card', () => {
     cardsListcomponent.card = mockResponse.data.filter(
       (card) => card.layout == 'scheme'
     )[0];
@@ -619,6 +648,23 @@ describe('CardsComponent', () => {
       img = schemeCard[0].query(By.css('ion-img'));
 
     expect(schemeCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
+  // vanguard card
+  fit('should create vanguard card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'vanguard'
+    )[0];
+
+    fixture.detectChanges();
+
+    const vanguardCard = el.queryAll(By.css('ion-card')),
+      img = vanguardCard[0].query(By.css('ion-img'));
+
+    expect(vanguardCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
       cardsListcomponent.card.image_uris.normal
     );
