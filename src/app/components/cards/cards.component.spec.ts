@@ -390,6 +390,36 @@ describe('CardsComponent', () => {
             'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.jpg?1572489832',
         },
       },
+      {
+        object: 'card',
+        id: 'c5287e77-890d-41bd-acc6-7a8f1866426d',
+        oracle_id: '156107a0-1657-4d04-904c-f8d19df32ff8',
+        multiverse_ids: [212578],
+        tcgplayer_id: 37086,
+        cardmarket_id: 240528,
+        name: 'A Display of My Dark Power',
+        lang: 'en',
+        released_at: '2010-06-18',
+        uri: 'https://api.scryfall.com/cards/c5287e77-890d-41bd-acc6-7a8f1866426d',
+        scryfall_uri:
+          'https://scryfall.com/card/oarc/8%E2%98%85/a-display-of-my-dark-power?utm_source=api',
+        layout: 'scheme',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.jpg?1562252706',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.jpg?1562252706',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.jpg?1562252706',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.png?1562252706',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.jpg?1562252706',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/5/c5287e77-890d-41bd-acc6-7a8f1866426d.jpg?1562252706',
+        },
+      },
     ],
   };
 
@@ -577,5 +607,24 @@ describe('CardsComponent', () => {
     );
   });
 
-  //Meld
+  // scheme card
+  fit('should create scheme card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'scheme'
+    )[0];
+
+    fixture.detectChanges();
+
+    const schemeCard = el.queryAll(By.css('ion-card')),
+      img = schemeCard[0].query(By.css('ion-img'));
+
+    expect(schemeCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
+  //Meld card
+
+  // Planar card
 });
