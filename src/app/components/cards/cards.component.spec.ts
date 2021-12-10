@@ -358,6 +358,38 @@ describe('CardsComponent', () => {
             'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.jpg?1631051127',
         },
       },
+      {
+        object: 'card',
+        id: '32158458-42eb-41bc-a15a-11af28463eb0',
+        oracle_id: 'db6fbdc9-1c45-416f-a08e-2082f65adb65',
+        multiverse_ids: [473000],
+        mtgo_id: 78176,
+        arena_id: 70185,
+        tcgplayer_id: 198549,
+        cardmarket_id: 399169,
+        name: 'Animating Faerie // Bring to Life',
+        lang: 'en',
+        released_at: '2019-10-04',
+        uri: 'https://api.scryfall.com/cards/32158458-42eb-41bc-a15a-11af28463eb0',
+        scryfall_uri:
+          'https://scryfall.com/card/eld/38/animating-faerie-bring-to-life?utm_source=api',
+        layout: 'adventure',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.jpg?1572489832',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.jpg?1572489832',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.jpg?1572489832',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.png?1572489832',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.jpg?1572489832',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/2/32158458-42eb-41bc-a15a-11af28463eb0.jpg?1572489832',
+        },
+      },
     ],
   };
 
@@ -512,7 +544,7 @@ describe('CardsComponent', () => {
   });
 
   //saga card
-  fit('should create saga card', () => {
+  it('should create saga card', () => {
     cardsListcomponent.card = mockResponse.data.filter(
       (card) => card.layout == 'saga'
     )[0];
@@ -523,6 +555,23 @@ describe('CardsComponent', () => {
       img = sagaCard[0].query(By.css('ion-img'));
 
     expect(sagaCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
+  //adventure card
+  it('should create adventure card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'adventure'
+    )[0];
+
+    fixture.detectChanges();
+
+    const adventureCard = el.queryAll(By.css('ion-card')),
+      img = adventureCard[0].query(By.css('ion-img'));
+
+    expect(adventureCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
       cardsListcomponent.card.image_uris.normal
     );
