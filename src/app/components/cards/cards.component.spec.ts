@@ -326,6 +326,38 @@ describe('CardsComponent', () => {
             'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/7/f754b385-a28d-48de-a91f-2b4f33cc47f7.jpg?1627709409',
         },
       },
+      {
+        object: 'card',
+        id: 'd18396f9-ae20-4471-84ab-a2148319bc39',
+        oracle_id: '7cb47a7e-fe60-45a2-9c07-bd5c6ddca82d',
+        multiverse_ids: [503817],
+        mtgo_id: 87745,
+        arena_id: 75248,
+        tcgplayer_id: 230718,
+        cardmarket_id: 531232,
+        name: 'Arni Slays the Troll',
+        lang: 'en',
+        released_at: '2021-02-05',
+        uri: 'https://api.scryfall.com/cards/d18396f9-ae20-4471-84ab-a2148319bc39',
+        scryfall_uri:
+          'https://scryfall.com/card/khm/201/arni-slays-the-troll?utm_source=api',
+        layout: 'saga',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.jpg?1631051127',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.jpg?1631051127',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.jpg?1631051127',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.png?1631051127',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.jpg?1631051127',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/1/d18396f9-ae20-4471-84ab-a2148319bc39.jpg?1631051127',
+        },
+      },
     ],
   };
 
@@ -478,5 +510,23 @@ describe('CardsComponent', () => {
       cardsListcomponent.card.image_uris.normal
     );
   });
+
+  //saga card
+  fit('should create saga card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'saga'
+    )[0];
+
+    fixture.detectChanges();
+
+    const sagaCard = el.queryAll(By.css('ion-card')),
+      img = sagaCard[0].query(By.css('ion-img'));
+
+    expect(sagaCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
   //Meld
 });
