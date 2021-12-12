@@ -476,6 +476,81 @@ describe('CardsComponent', () => {
             'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/e/6/e6dd9a8a-3b80-4c1c-9d44-7f998164dbcc.jpg?1637376773',
         },
       },
+      {
+        "object": "card",
+        "id": "3a98c51f-c55c-4bd9-853b-65b8bad5a29f",
+        "oracle_id": "38cbe58a-c740-4d24-b09f-28922aa767c2",
+        "multiverse_ids": [
+
+        ],
+        "name": "Human // Wolf",
+        "lang": "en",
+        "released_at": "2012-01-01",
+        "uri": "https://api.scryfall.com/cards/3a98c51f-c55c-4bd9-853b-65b8bad5a29f",
+        "scryfall_uri": "https://scryfall.com/card/f12/1a/human-wolf?utm_source=api",
+        "layout": "double_faced_token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "cmc": 0.0,
+        "type_line": "Token Creature — Human // Token Creature — Wolf",
+        "color_identity": [
+          "G",
+          "W"
+        ],
+        "keywords": [
+
+        ],
+        "card_faces": [
+          {
+            "object": "card_face",
+            "name": "Human",
+            "flavor_name": "",
+            "mana_cost": "",
+            "type_line": "Token Creature — Human",
+            "oracle_text": "",
+            "colors": [
+              "W"
+            ],
+            "power": "1",
+            "toughness": "1",
+            "artist": "Lars Grant-West",
+            "artist_id": "21ed6499-c4d3-4965-ab02-6c7228275bec",
+            "illustration_id": "7ecd772f-6fb3-4255-a220-cfc64dead558",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.png?1573574122",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122"
+            }
+          },
+          {
+            "object": "card_face",
+            "name": "Wolf",
+            "flavor_name": "",
+            "mana_cost": "",
+            "type_line": "Token Creature — Wolf",
+            "oracle_text": "",
+            "colors": [
+              "W"
+            ],
+            "power": "2",
+            "toughness": "2",
+            "artist": "Lars Grant-West",
+            "artist_id": "21ed6499-c4d3-4965-ab02-6c7228275bec",
+            "illustration_id": "52c07e4c-6107-4962-8a5f-673cfc590668",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.png?1573574122",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122"
+            }
+          }
+        ]
+      }
     ],
   };
 
@@ -698,7 +773,7 @@ describe('CardsComponent', () => {
   });
 
   // token card
-  fit('should create token card', () => {
+  it('should create token card', () => {
     cardsListcomponent.card = mockResponse.data.filter(
       (card) => card.layout == 'token'
     )[0];
@@ -711,6 +786,29 @@ describe('CardsComponent', () => {
     expect(tokenCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
       cardsListcomponent.card.image_uris.normal
+    );
+  });
+
+  //double_faced_token
+  fit('should create double faced token card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'double_faced_token'
+    )[0];
+
+    fixture.detectChanges();
+
+    const faceCard = el.queryAll(By.css('.card')),
+      fab = el.queryAll(By.css('ion-fab')),
+      transform_front = faceCard[0].query(By.css('ion-img.first')),
+      transform_back = faceCard[0].query(By.css('ion-img.back'));
+
+    expect(faceCard).toBeTruthy('Could not find card');
+    expect(fab).toBeTruthy('Could not find FAB');
+    expect(transform_front.nativeElement.src).toBe(
+      cardsListcomponent.card.card_faces[0].image_uris.normal
+    );
+    expect(transform_back.nativeElement.src).toBe(
+      cardsListcomponent.card.card_faces[1].image_uris.normal
     );
   });
 
