@@ -550,6 +550,31 @@ describe('CardsComponent', () => {
             }
           }
         ]
+      },
+      {
+        "object": "card",
+        "id": "1c97e5b2-a024-4aa7-a9b8-45f441aad138",
+        "oracle_id": "7c0edef3-5346-4001-87ae-11157be58031",
+        "multiverse_ids": [
+
+        ],
+        "tcgplayer_id": 170076,
+        "name": "Ajani, Adversary of Tyrants Emblem",
+        "lang": "en",
+        "released_at": "2018-07-13",
+        "uri": "https://api.scryfall.com/cards/1c97e5b2-a024-4aa7-a9b8-45f441aad138",
+        "scryfall_uri": "https://scryfall.com/card/tm19/15/ajani-adversary-of-tyrants-emblem?utm_source=api",
+        "layout": "emblem",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
+          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
+          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
+          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.png?1562701927",
+          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
+          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927"
+        }
       }
     ],
   };
@@ -790,7 +815,7 @@ describe('CardsComponent', () => {
   });
 
   //double_faced_token
-  fit('should create double faced token card', () => {
+  it('should create double faced token card', () => {
     cardsListcomponent.card = mockResponse.data.filter(
       (card) => card.layout == 'double_faced_token'
     )[0];
@@ -811,6 +836,24 @@ describe('CardsComponent', () => {
       cardsListcomponent.card.card_faces[1].image_uris.normal
     );
   });
+
+  //emblem
+  fit('should create emblem card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'emblem'
+    )[0];
+
+    fixture.detectChanges();
+
+    const emblemCard = el.queryAll(By.css('ion-card')),
+      img = emblemCard[0].query(By.css('ion-img'));
+
+    expect(emblemCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
 
   //Meld card
 
