@@ -626,6 +626,76 @@ describe('CardsComponent', () => {
           "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
           "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840"
         }
+      },
+      {
+        "object": "card",
+        "id": "f06b86a1-aae3-4d17-ab3e-7104bfe36db5",
+        "oracle_id": "094b62b0-be26-4638-bfd7-280126aa78c8",
+        "multiverse_ids": [
+
+        ],
+        "name": "Alrund, God of the Cosmos // Alrund, God of the Cosmos",
+        "lang": "en",
+        "released_at": "2021-02-05",
+        "uri": "https://api.scryfall.com/cards/f06b86a1-aae3-4d17-ab3e-7104bfe36db5",
+        "scryfall_uri": "https://scryfall.com/card/akhm/9/alrund-god-of-the-cosmos-alrund-god-of-the-cosmos?utm_source=api",
+        "layout": "art_series",
+        "highres_image": false,
+        "image_status": "lowres",
+        "cmc": 0.0,
+        "type_line": "Card // Card",
+        "color_identity": [
+
+        ],
+        "keywords": [
+
+        ],
+        "card_faces": [
+          {
+            "object": "card_face",
+            "name": "Alrund, God of the Cosmos",
+            "flavor_name": "",
+            "mana_cost": "",
+            "type_line": "Card",
+            "oracle_text": "",
+            "colors": [
+
+            ],
+            "artist": "Kieran Yanner",
+            "artist_id": "aa7e89ed-d294-4633-9057-ce04dacfcfa4",
+            "illustration_id": "866f4c59-1331-480e-8f5f-d7454a3ea556",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.png?1619370365",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365"
+            }
+          },
+          {
+            "object": "card_face",
+            "name": "Alrund, God of the Cosmos",
+            "flavor_name": "",
+            "mana_cost": "",
+            "type_line": "Card",
+            "oracle_text": "",
+            "colors": [
+
+            ],
+            "artist": "Kieran Yanner",
+            "artist_id": "aa7e89ed-d294-4633-9057-ce04dacfcfa4",
+            "illustration_id": "83d02c1f-3242-4256-bb25-d7e894248242",
+            "image_uris": {
+              "small": "https://c1.scryfall.com/file/scryfall-cards/small/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "large": "https://c1.scryfall.com/file/scryfall-cards/large/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "png": "https://c1.scryfall.com/file/scryfall-cards/png/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.png?1619370365",
+              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
+              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365"
+            }
+          }
+        ]
       }
     ],
   };
@@ -939,7 +1009,32 @@ describe('CardsComponent', () => {
     );
   });
 
+  //art_series
+  it('should create art_series card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'art_series'
+    )[0];
+
+    fixture.detectChanges();
+
+    const artCard = el.queryAll(By.css('.card')),
+      fab = el.queryAll(By.css('ion-fab')),
+      transform_front = artCard[0].query(By.css('ion-img.first')),
+      transform_back = artCard[0].query(By.css('ion-img.back'));
+
+    expect(artCard).toBeTruthy('Could not find card');
+    expect(fab).toBeTruthy('Could not find FAB');
+    expect(transform_front.nativeElement.src).toBe(
+      cardsListcomponent.card.card_faces[0].image_uris.normal
+    );
+    expect(transform_back.nativeElement.src).toBe(
+      cardsListcomponent.card.card_faces[1].image_uris.normal
+    );
+  });
+
   //Meld card
 
   // Planar card
+
+  //reversible_card
 });

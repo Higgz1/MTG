@@ -66,11 +66,11 @@
   <div class="card" *ngIf="card.layout == 'art_series' ">
 
     <div class="card__face card__face--front">
-      <ion-img [src]="card.card_faces[0].image_uris.normal"></ion-img>
+      <ion-img class="first" [src]="card.card_faces[0].image_uris.normal"></ion-img>
     </div>
 
     <div class="card__face card__face--back">
-      <ion-img [src]="card.card_faces[1].image_uris.normal"></ion-img>
+      <ion-img class="back" [src]="card.card_faces[1].image_uris.normal"></ion-img>
     </div>
   </div>
 
