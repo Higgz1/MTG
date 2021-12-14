@@ -575,6 +575,57 @@ describe('CardsComponent', () => {
           "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
           "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927"
         }
+      },
+      {
+        "object": "card",
+        "id": "b14ebf7a-c616-4a89-904b-75c5602c54de",
+        "oracle_id": "e2225848-bfde-4921-b47f-b93da10140a9",
+        "multiverse_ids": [
+          479490
+        ],
+        "tcgplayer_id": 208526,
+        "cardmarket_id": 438104,
+        "name": "Bat-",
+        "lang": "en",
+        "released_at": "2020-02-29",
+        "uri": "https://api.scryfall.com/cards/b14ebf7a-c616-4a89-904b-75c5602c54de",
+        "scryfall_uri": "https://scryfall.com/card/und/32/bat-?utm_source=api",
+        "layout": "augment",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
+          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
+          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
+          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.png?1605259369",
+          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
+          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369"
+        }
+      }, {
+        "object": "card",
+        "id": "d25ff6aa-a01d-49f2-926f-8f5457143b5c",
+        "oracle_id": "748d5353-b66c-4d7a-8c55-0d28fefb1e2a",
+        "multiverse_ids": [
+          479485
+        ],
+        "tcgplayer_id": 208588,
+        "cardmarket_id": 438159,
+        "name": "Adorable Kitten",
+        "lang": "en",
+        "released_at": "2020-02-29",
+        "uri": "https://api.scryfall.com/cards/d25ff6aa-a01d-49f2-926f-8f5457143b5c",
+        "scryfall_uri": "https://scryfall.com/card/und/1/adorable-kitten?utm_source=api",
+        "layout": "host",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
+          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
+          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
+          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.png?1583542840",
+          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
+          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840"
+        }
       }
     ],
   };
@@ -838,7 +889,7 @@ describe('CardsComponent', () => {
   });
 
   //emblem
-  fit('should create emblem card', () => {
+  it('should create emblem card', () => {
     cardsListcomponent.card = mockResponse.data.filter(
       (card) => card.layout == 'emblem'
     )[0];
@@ -854,6 +905,39 @@ describe('CardsComponent', () => {
     );
   });
 
+  //augment
+  it('should create augment card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'augment'
+    )[0];
+
+    fixture.detectChanges();
+
+    const augmentCard = el.queryAll(By.css('ion-card')),
+      img = augmentCard[0].query(By.css('ion-img'));
+
+    expect(augmentCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
+
+  //host
+  it('should create host card', () => {
+    cardsListcomponent.card = mockResponse.data.filter(
+      (card) => card.layout == 'host'
+    )[0];
+
+    fixture.detectChanges();
+
+    const hostCard = el.queryAll(By.css('ion-card')),
+      img = hostCard[0].query(By.css('ion-img'));
+
+    expect(hostCard).toBeTruthy('Could not find card');
+    expect(img.nativeElement.src).toBe(
+      cardsListcomponent.card.image_uris.normal
+    );
+  });
 
   //Meld card
 
