@@ -23,5 +23,14 @@
 </ion-header>
 
 <ion-content>
+  <!-- <ion-grid class="grid">
+    <ion-row>
+      <ion-col class="card-col" *ngFor="let card of cards" size="6">
+        <app-cards [card]="card"></app-cards>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  
   <app-cards *ngFor="let card of cards" [card]="card"></app-cards>
+
 </ion-content>
