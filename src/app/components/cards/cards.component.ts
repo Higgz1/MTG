@@ -12,19 +12,15 @@ export class CardsComponent implements OnInit {
   ngOnInit() { }
 
   flipTransform(item) {
-    console.log(item)
-    
     const transform = document.body.querySelectorAll('.card')[item.index];
-    console.log(transform)
-
+    // console.log(transform)
     transform.classList.toggle('is-flipped');
   }
 
   flipToken(item) {
 
     const token = document.body.querySelectorAll('.card')[item.index];
-    console.log(token)
-
+    // console.log(token)
     token.classList.toggle('is-flipped');
   }
 
@@ -41,7 +37,7 @@ export class CardsComponent implements OnInit {
   art_series(item) {
     // console.log(item)
     const art_series = document.body.querySelectorAll('.card')[item.index];
-    console.log(art_series)
+    // console.log(art_series)
 
     art_series.classList.toggle('is-flipped'); 
 
