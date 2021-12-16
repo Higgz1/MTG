@@ -477,226 +477,239 @@ describe('CardsComponent', () => {
         },
       },
       {
-        "object": "card",
-        "id": "3a98c51f-c55c-4bd9-853b-65b8bad5a29f",
-        "oracle_id": "38cbe58a-c740-4d24-b09f-28922aa767c2",
-        "multiverse_ids": [
-
-        ],
-        "name": "Human // Wolf",
-        "lang": "en",
-        "released_at": "2012-01-01",
-        "uri": "https://api.scryfall.com/cards/3a98c51f-c55c-4bd9-853b-65b8bad5a29f",
-        "scryfall_uri": "https://scryfall.com/card/f12/1a/human-wolf?utm_source=api",
-        "layout": "double_faced_token",
-        "highres_image": true,
-        "image_status": "highres_scan",
-        "cmc": 0.0,
-        "type_line": "Token Creature — Human // Token Creature — Wolf",
-        "color_identity": [
-          "G",
-          "W"
-        ],
-        "keywords": [
-
-        ],
-        "card_faces": [
+        object: 'card',
+        id: '3a98c51f-c55c-4bd9-853b-65b8bad5a29f',
+        oracle_id: '38cbe58a-c740-4d24-b09f-28922aa767c2',
+        multiverse_ids: [],
+        name: 'Human // Wolf',
+        lang: 'en',
+        released_at: '2012-01-01',
+        uri: 'https://api.scryfall.com/cards/3a98c51f-c55c-4bd9-853b-65b8bad5a29f',
+        scryfall_uri:
+          'https://scryfall.com/card/f12/1a/human-wolf?utm_source=api',
+        layout: 'double_faced_token',
+        highres_image: true,
+        image_status: 'highres_scan',
+        cmc: 0.0,
+        type_line: 'Token Creature — Human // Token Creature — Wolf',
+        color_identity: ['G', 'W'],
+        keywords: [],
+        card_faces: [
           {
-            "object": "card_face",
-            "name": "Human",
-            "flavor_name": "",
-            "mana_cost": "",
-            "type_line": "Token Creature — Human",
-            "oracle_text": "",
-            "colors": [
-              "W"
-            ],
-            "power": "1",
-            "toughness": "1",
-            "artist": "Lars Grant-West",
-            "artist_id": "21ed6499-c4d3-4965-ab02-6c7228275bec",
-            "illustration_id": "7ecd772f-6fb3-4255-a220-cfc64dead558",
-            "image_uris": {
-              "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.png?1573574122",
-              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122"
-            }
+            object: 'card_face',
+            name: 'Human',
+            flavor_name: '',
+            mana_cost: '',
+            type_line: 'Token Creature — Human',
+            oracle_text: '',
+            colors: ['W'],
+            power: '1',
+            toughness: '1',
+            artist: 'Lars Grant-West',
+            artist_id: '21ed6499-c4d3-4965-ab02-6c7228275bec',
+            illustration_id: '7ecd772f-6fb3-4255-a220-cfc64dead558',
+            image_uris: {
+              small:
+                'https://c1.scryfall.com/file/scryfall-cards/small/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              normal:
+                'https://c1.scryfall.com/file/scryfall-cards/normal/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              large:
+                'https://c1.scryfall.com/file/scryfall-cards/large/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.png?1573574122',
+              art_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              border_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+            },
           },
           {
-            "object": "card_face",
-            "name": "Wolf",
-            "flavor_name": "",
-            "mana_cost": "",
-            "type_line": "Token Creature — Wolf",
-            "oracle_text": "",
-            "colors": [
-              "W"
-            ],
-            "power": "2",
-            "toughness": "2",
-            "artist": "Lars Grant-West",
-            "artist_id": "21ed6499-c4d3-4965-ab02-6c7228275bec",
-            "illustration_id": "52c07e4c-6107-4962-8a5f-673cfc590668",
-            "image_uris": {
-              "small": "https://c1.scryfall.com/file/scryfall-cards/small/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "large": "https://c1.scryfall.com/file/scryfall-cards/large/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "png": "https://c1.scryfall.com/file/scryfall-cards/png/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.png?1573574122",
-              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122",
-              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122"
-            }
-          }
-        ]
+            object: 'card_face',
+            name: 'Wolf',
+            flavor_name: '',
+            mana_cost: '',
+            type_line: 'Token Creature — Wolf',
+            oracle_text: '',
+            colors: ['W'],
+            power: '2',
+            toughness: '2',
+            artist: 'Lars Grant-West',
+            artist_id: '21ed6499-c4d3-4965-ab02-6c7228275bec',
+            illustration_id: '52c07e4c-6107-4962-8a5f-673cfc590668',
+            image_uris: {
+              small:
+                'https://c1.scryfall.com/file/scryfall-cards/small/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              normal:
+                'https://c1.scryfall.com/file/scryfall-cards/normal/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              large:
+                'https://c1.scryfall.com/file/scryfall-cards/large/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              png: 'https://c1.scryfall.com/file/scryfall-cards/png/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.png?1573574122',
+              art_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/art_crop/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+              border_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/border_crop/back/3/a/3a98c51f-c55c-4bd9-853b-65b8bad5a29f.jpg?1573574122',
+            },
+          },
+        ],
       },
       {
-        "object": "card",
-        "id": "1c97e5b2-a024-4aa7-a9b8-45f441aad138",
-        "oracle_id": "7c0edef3-5346-4001-87ae-11157be58031",
-        "multiverse_ids": [
-
-        ],
-        "tcgplayer_id": 170076,
-        "name": "Ajani, Adversary of Tyrants Emblem",
-        "lang": "en",
-        "released_at": "2018-07-13",
-        "uri": "https://api.scryfall.com/cards/1c97e5b2-a024-4aa7-a9b8-45f441aad138",
-        "scryfall_uri": "https://scryfall.com/card/tm19/15/ajani-adversary-of-tyrants-emblem?utm_source=api",
-        "layout": "emblem",
-        "highres_image": true,
-        "image_status": "highres_scan",
-        "image_uris": {
-          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
-          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
-          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
-          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.png?1562701927",
-          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927",
-          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927"
-        }
+        object: 'card',
+        id: '1c97e5b2-a024-4aa7-a9b8-45f441aad138',
+        oracle_id: '7c0edef3-5346-4001-87ae-11157be58031',
+        multiverse_ids: [],
+        tcgplayer_id: 170076,
+        name: 'Ajani, Adversary of Tyrants Emblem',
+        lang: 'en',
+        released_at: '2018-07-13',
+        uri: 'https://api.scryfall.com/cards/1c97e5b2-a024-4aa7-a9b8-45f441aad138',
+        scryfall_uri:
+          'https://scryfall.com/card/tm19/15/ajani-adversary-of-tyrants-emblem?utm_source=api',
+        layout: 'emblem',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.png?1562701927',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/c/1c97e5b2-a024-4aa7-a9b8-45f441aad138.jpg?1562701927',
+        },
       },
       {
-        "object": "card",
-        "id": "b14ebf7a-c616-4a89-904b-75c5602c54de",
-        "oracle_id": "e2225848-bfde-4921-b47f-b93da10140a9",
-        "multiverse_ids": [
-          479490
-        ],
-        "tcgplayer_id": 208526,
-        "cardmarket_id": 438104,
-        "name": "Bat-",
-        "lang": "en",
-        "released_at": "2020-02-29",
-        "uri": "https://api.scryfall.com/cards/b14ebf7a-c616-4a89-904b-75c5602c54de",
-        "scryfall_uri": "https://scryfall.com/card/und/32/bat-?utm_source=api",
-        "layout": "augment",
-        "highres_image": true,
-        "image_status": "highres_scan",
-        "image_uris": {
-          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
-          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
-          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
-          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.png?1605259369",
-          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369",
-          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369"
-        }
-      }, {
-        "object": "card",
-        "id": "d25ff6aa-a01d-49f2-926f-8f5457143b5c",
-        "oracle_id": "748d5353-b66c-4d7a-8c55-0d28fefb1e2a",
-        "multiverse_ids": [
-          479485
-        ],
-        "tcgplayer_id": 208588,
-        "cardmarket_id": 438159,
-        "name": "Adorable Kitten",
-        "lang": "en",
-        "released_at": "2020-02-29",
-        "uri": "https://api.scryfall.com/cards/d25ff6aa-a01d-49f2-926f-8f5457143b5c",
-        "scryfall_uri": "https://scryfall.com/card/und/1/adorable-kitten?utm_source=api",
-        "layout": "host",
-        "highres_image": true,
-        "image_status": "highres_scan",
-        "image_uris": {
-          "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
-          "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
-          "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
-          "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.png?1583542840",
-          "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840",
-          "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840"
-        }
+        object: 'card',
+        id: 'b14ebf7a-c616-4a89-904b-75c5602c54de',
+        oracle_id: 'e2225848-bfde-4921-b47f-b93da10140a9',
+        multiverse_ids: [479490],
+        tcgplayer_id: 208526,
+        cardmarket_id: 438104,
+        name: 'Bat-',
+        lang: 'en',
+        released_at: '2020-02-29',
+        uri: 'https://api.scryfall.com/cards/b14ebf7a-c616-4a89-904b-75c5602c54de',
+        scryfall_uri: 'https://scryfall.com/card/und/32/bat-?utm_source=api',
+        layout: 'augment',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.png?1605259369',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/1/b14ebf7a-c616-4a89-904b-75c5602c54de.jpg?1605259369',
+        },
       },
       {
-        "object": "card",
-        "id": "f06b86a1-aae3-4d17-ab3e-7104bfe36db5",
-        "oracle_id": "094b62b0-be26-4638-bfd7-280126aa78c8",
-        "multiverse_ids": [
-
-        ],
-        "name": "Alrund, God of the Cosmos // Alrund, God of the Cosmos",
-        "lang": "en",
-        "released_at": "2021-02-05",
-        "uri": "https://api.scryfall.com/cards/f06b86a1-aae3-4d17-ab3e-7104bfe36db5",
-        "scryfall_uri": "https://scryfall.com/card/akhm/9/alrund-god-of-the-cosmos-alrund-god-of-the-cosmos?utm_source=api",
-        "layout": "art_series",
-        "highres_image": false,
-        "image_status": "lowres",
-        "cmc": 0.0,
-        "type_line": "Card // Card",
-        "color_identity": [
-
-        ],
-        "keywords": [
-
-        ],
-        "card_faces": [
+        object: 'card',
+        id: 'd25ff6aa-a01d-49f2-926f-8f5457143b5c',
+        oracle_id: '748d5353-b66c-4d7a-8c55-0d28fefb1e2a',
+        multiverse_ids: [479485],
+        tcgplayer_id: 208588,
+        cardmarket_id: 438159,
+        name: 'Adorable Kitten',
+        lang: 'en',
+        released_at: '2020-02-29',
+        uri: 'https://api.scryfall.com/cards/d25ff6aa-a01d-49f2-926f-8f5457143b5c',
+        scryfall_uri:
+          'https://scryfall.com/card/und/1/adorable-kitten?utm_source=api',
+        layout: 'host',
+        highres_image: true,
+        image_status: 'highres_scan',
+        image_uris: {
+          small:
+            'https://c1.scryfall.com/file/scryfall-cards/small/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840',
+          normal:
+            'https://c1.scryfall.com/file/scryfall-cards/normal/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840',
+          large:
+            'https://c1.scryfall.com/file/scryfall-cards/large/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840',
+          png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.png?1583542840',
+          art_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840',
+          border_crop:
+            'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/2/d25ff6aa-a01d-49f2-926f-8f5457143b5c.jpg?1583542840',
+        },
+      },
+      {
+        object: 'card',
+        id: 'f06b86a1-aae3-4d17-ab3e-7104bfe36db5',
+        oracle_id: '094b62b0-be26-4638-bfd7-280126aa78c8',
+        multiverse_ids: [],
+        name: 'Alrund, God of the Cosmos // Alrund, God of the Cosmos',
+        lang: 'en',
+        released_at: '2021-02-05',
+        uri: 'https://api.scryfall.com/cards/f06b86a1-aae3-4d17-ab3e-7104bfe36db5',
+        scryfall_uri:
+          'https://scryfall.com/card/akhm/9/alrund-god-of-the-cosmos-alrund-god-of-the-cosmos?utm_source=api',
+        layout: 'art_series',
+        highres_image: false,
+        image_status: 'lowres',
+        cmc: 0.0,
+        type_line: 'Card // Card',
+        color_identity: [],
+        keywords: [],
+        card_faces: [
           {
-            "object": "card_face",
-            "name": "Alrund, God of the Cosmos",
-            "flavor_name": "",
-            "mana_cost": "",
-            "type_line": "Card",
-            "oracle_text": "",
-            "colors": [
-
-            ],
-            "artist": "Kieran Yanner",
-            "artist_id": "aa7e89ed-d294-4633-9057-ce04dacfcfa4",
-            "illustration_id": "866f4c59-1331-480e-8f5f-d7454a3ea556",
-            "image_uris": {
-              "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.png?1619370365",
-              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365"
-            }
+            object: 'card_face',
+            name: 'Alrund, God of the Cosmos',
+            flavor_name: '',
+            mana_cost: '',
+            type_line: 'Card',
+            oracle_text: '',
+            colors: [],
+            artist: 'Kieran Yanner',
+            artist_id: 'aa7e89ed-d294-4633-9057-ce04dacfcfa4',
+            illustration_id: '866f4c59-1331-480e-8f5f-d7454a3ea556',
+            image_uris: {
+              small:
+                'https://c1.scryfall.com/file/scryfall-cards/small/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              normal:
+                'https://c1.scryfall.com/file/scryfall-cards/normal/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              large:
+                'https://c1.scryfall.com/file/scryfall-cards/large/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              png: 'https://c1.scryfall.com/file/scryfall-cards/png/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.png?1619370365',
+              art_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              border_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+            },
           },
           {
-            "object": "card_face",
-            "name": "Alrund, God of the Cosmos",
-            "flavor_name": "",
-            "mana_cost": "",
-            "type_line": "Card",
-            "oracle_text": "",
-            "colors": [
-
-            ],
-            "artist": "Kieran Yanner",
-            "artist_id": "aa7e89ed-d294-4633-9057-ce04dacfcfa4",
-            "illustration_id": "83d02c1f-3242-4256-bb25-d7e894248242",
-            "image_uris": {
-              "small": "https://c1.scryfall.com/file/scryfall-cards/small/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "large": "https://c1.scryfall.com/file/scryfall-cards/large/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "png": "https://c1.scryfall.com/file/scryfall-cards/png/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.png?1619370365",
-              "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365",
-              "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365"
-            }
-          }
-        ]
-      }
+            object: 'card_face',
+            name: 'Alrund, God of the Cosmos',
+            flavor_name: '',
+            mana_cost: '',
+            type_line: 'Card',
+            oracle_text: '',
+            colors: [],
+            artist: 'Kieran Yanner',
+            artist_id: 'aa7e89ed-d294-4633-9057-ce04dacfcfa4',
+            illustration_id: '83d02c1f-3242-4256-bb25-d7e894248242',
+            image_uris: {
+              small:
+                'https://c1.scryfall.com/file/scryfall-cards/small/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              normal:
+                'https://c1.scryfall.com/file/scryfall-cards/normal/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              large:
+                'https://c1.scryfall.com/file/scryfall-cards/large/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              png: 'https://c1.scryfall.com/file/scryfall-cards/png/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.png?1619370365',
+              art_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/art_crop/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+              border_crop:
+                'https://c1.scryfall.com/file/scryfall-cards/border_crop/back/f/0/f06b86a1-aae3-4d17-ab3e-7104bfe36db5.jpg?1619370365',
+            },
+          },
+        ],
+      },
     ],
   };
 
