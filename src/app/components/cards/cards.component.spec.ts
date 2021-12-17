@@ -743,7 +743,7 @@ describe('CardsComponent', () => {
 
     expect(normalCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -760,7 +760,7 @@ describe('CardsComponent', () => {
 
     expect(splitCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -779,7 +779,7 @@ describe('CardsComponent', () => {
     expect(flipCard).toBeTruthy('Could not find card');
     expect(fab).toBeTruthy('Could not find FAB');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -799,10 +799,10 @@ describe('CardsComponent', () => {
     expect(transformCard).toBeTruthy('Could not find card');
     expect(fab).toBeTruthy('Could not find FAB');
     expect(transform_front.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[0].image_uris.normal
+      cardsListcomponent.card.card_faces[0].image_uris.small
     );
     expect(transform_back.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[1].image_uris.normal
+      cardsListcomponent.card.card_faces[1].image_uris.small
     );
   });
 
@@ -822,10 +822,10 @@ describe('CardsComponent', () => {
     expect(modalCard).toBeTruthy('Could not find card');
     expect(fab).toBeTruthy('Could not find FAB');
     expect(modal_front.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[0].image_uris.normal
+      cardsListcomponent.card.card_faces[0].image_uris.small
     );
     expect(modal_back.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[1].image_uris.normal
+      cardsListcomponent.card.card_faces[1].image_uris.small
     );
   });
 
@@ -842,7 +842,7 @@ describe('CardsComponent', () => {
 
     expect(levelerCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -859,7 +859,7 @@ describe('CardsComponent', () => {
 
     expect(classCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -876,7 +876,7 @@ describe('CardsComponent', () => {
 
     expect(sagaCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -893,7 +893,7 @@ describe('CardsComponent', () => {
 
     expect(adventureCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -910,7 +910,7 @@ describe('CardsComponent', () => {
 
     expect(schemeCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -927,7 +927,7 @@ describe('CardsComponent', () => {
 
     expect(vanguardCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -944,7 +944,7 @@ describe('CardsComponent', () => {
 
     expect(tokenCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -964,10 +964,10 @@ describe('CardsComponent', () => {
     expect(faceCard).toBeTruthy('Could not find card');
     expect(fab).toBeTruthy('Could not find FAB');
     expect(transform_front.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[0].image_uris.normal
+      cardsListcomponent.card.card_faces[0].image_uris.small
     );
     expect(transform_back.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[1].image_uris.normal
+      cardsListcomponent.card.card_faces[1].image_uris.small
     );
   });
 
@@ -984,7 +984,7 @@ describe('CardsComponent', () => {
 
     expect(emblemCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -1001,7 +1001,7 @@ describe('CardsComponent', () => {
 
     expect(augmentCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -1018,7 +1018,7 @@ describe('CardsComponent', () => {
 
     expect(hostCard).toBeTruthy('Could not find card');
     expect(img.nativeElement.src).toBe(
-      cardsListcomponent.card.image_uris.normal
+      cardsListcomponent.card.image_uris.small
     );
   });
 
@@ -1038,10 +1038,10 @@ describe('CardsComponent', () => {
     expect(artCard).toBeTruthy('Could not find card');
     expect(fab).toBeTruthy('Could not find FAB');
     expect(transform_front.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[0].image_uris.normal
+      cardsListcomponent.card.card_faces[0].image_uris.small
     );
     expect(transform_back.nativeElement.src).toBe(
-      cardsListcomponent.card.card_faces[1].image_uris.normal
+      cardsListcomponent.card.card_faces[1].image_uris.small
     );
   });
 
