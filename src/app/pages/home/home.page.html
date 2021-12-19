@@ -18,13 +18,13 @@
     <!-- <h4>MTG Sets</h4> -->
     <ion-card-subtitle>Search for MTG sets .</ion-card-subtitle>
 
-    <ion-searchbar class="ion-no-padding ion-padding-top"></ion-searchbar>
+    <ion-searchbar class="ion-no-padding ion-padding-top" [(ngModel)]="set" animated="true"></ion-searchbar>
   </div>
 </ion-header>
 
 <ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)" >
   
-  <app-sets *ngFor="let set of sets" [set]="set" (click)="getCards(set.search_uri)"></app-sets>
+  <app-sets *ngFor="let set of sets | filter:set" [set]="set" (click)="getCards(set.search_uri)"></app-sets>
 
   <ion-fab *ngIf="isShown" slot="fixed" vertical="bottom" horizontal="end" >
     <ion-fab-button (click)="ScrollToTop()" color="secondary" size="small">
