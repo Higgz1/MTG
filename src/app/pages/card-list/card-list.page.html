@@ -9,7 +9,7 @@
     <ion-title>Cards</ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <ion-icon name="options-outline"></ion-icon>
+        <ion-icon name="options-outline"></ion-icon> 
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -23,14 +23,14 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-grid class="grid">
-    <ion-row>
-      <ion-col class="card-col" *ngFor="let card of cards" size="6">
+  <ion-grid class="grid">
+    <ion-row >
+      <ion-col *ngFor="let card of cards" size="6">
         <app-cards [card]="card"></app-cards>
       </ion-col>
     </ion-row>
-  </ion-grid> -->
+  </ion-grid>
   
-  <app-cards *ngFor="let card of cards" [card]="card"></app-cards>
+  <!-- <app-cards *ngFor="let card of cards" [card]="card"></app-cards>2 -->
 
 </ion-content>
