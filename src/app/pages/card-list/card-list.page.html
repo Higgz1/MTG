@@ -18,14 +18,15 @@
     <!-- <h4>MTG Sets</h4> -->
     <ion-card-subtitle>Search for Cards .</ion-card-subtitle>
 
-    <ion-searchbar class="ion-no-padding ion-padding-top"></ion-searchbar>
+    <ion-searchbar class="ion-no-padding ion-padding-top" [(ngModel)]="card" animated="true"></ion-searchbar>
+
   </div>
 </ion-header>
 
 <ion-content>
   <ion-grid class="grid">
     <ion-row >
-      <ion-col class="column" *ngFor="let card of cards" size="6">
+      <ion-col class="column" *ngFor="let card of cards | filter:card" size="6">
         <app-cards [card]="card"></app-cards>
       </ion-col>
     </ion-row>
