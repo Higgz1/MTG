@@ -27,6 +27,13 @@ export class HomePage implements OnInit {
     this.content.scrollToTop(1500);
   }
 
+  refresh(event) {
+    
+    this.getSets();
+    event.target.complete();
+
+  }
+
   getSets() {
     this.setService.getSets().subscribe((setsList: any) => {
       this.sets = setsList.data;

@@ -23,6 +23,15 @@
 </ion-header>
 
 <ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)" >
+
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Pull to refresh" 
+      refreshingSpinner="crescent"
+      refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
   
   <app-sets *ngFor="let set of sets | filter:set" [set]="set" (click)="getCards(set.search_uri)"></app-sets>
 
