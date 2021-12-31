@@ -1,45 +1,9 @@
 <ion-card>
-  <!-- Normal -->
-  <ion-img class="card" *ngIf="card.layout == 'normal' " [src]="card.image_uris.small"></ion-img>
+  <!-- Single face cards-->
+  <ion-img class="card" *ngIf="card.layout == 'normal'|| card.layout == 'leveler'|| card.layout == 'saga'|| card.layout == 'adventure'||card.layout =='scheme'|| card.layout =='class' || card.layout =='split' || card.layout =='flip' || card.layout == 'vanguard' ||card.layout == 'token' || card.layout == 'emblem' || card.layout =='augment' || card.layout =='host'" [src]="card.image_uris.small"></ion-img>
 
-  <!-- Leveler -->
-  <ion-img class="card" *ngIf="card.layout == 'leveler' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Saga -->
-  <ion-img class="card" *ngIf="card.layout == 'saga' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Adventure -->
-  <ion-img class="card" *ngIf="card.layout == 'adventure' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Scheme -->
-  <ion-img class="card" *ngIf="card.layout == 'scheme' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Class -->
-  <ion-img class="card" *ngIf="card.layout == 'class' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Split-->
-  <ion-img class="card" *ngIf="card.layout == 'split' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Flip-->
-  <ion-img class="card" *ngIf="card.layout == 'flip' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Vanguard-->
-  <ion-img class="card" *ngIf="card.layout == 'vanguard' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Token-->
-  <ion-img class="card" *ngIf="card.layout == 'token' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Emblem-->
-  <ion-img class="card" *ngIf="card.layout == 'emblem' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Augment-->
-  <ion-img class="card" *ngIf="card.layout == 'augment' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Host-->
-  <ion-img class="card" *ngIf="card.layout == 'host' " [src]="card.image_uris.small"></ion-img>
-
-  <!-- Transform-->
-  <div class="card" *ngIf="card.layout == 'transform' ">
+  <!-- Dual faced cards-->
+  <div class="card" *ngIf="card.layout == 'transform' || card.layout == 'modal_dfc' || card.layout == 'art_series' || card.layout == 'double_faced_token'">
 
     <div class="card__face card__face--front">
       <ion-img class="first" [src]="card.card_faces[0].image_uris.small"></ion-img>
@@ -50,45 +14,6 @@
     </div>
   </div>
 
-  <!-- modal_dfc-->
-  <div class="card" *ngIf="card.layout == 'modal_dfc' ">
-
-    <div class="card__face card__face--front">
-      <ion-img class="first" [src]="card.card_faces[0].image_uris.small"></ion-img>
-    </div>
-
-    <div class="card__face card__face--back">
-      <ion-img class="back" [src]="card.card_faces[1].image_uris.small"></ion-img>
-    </div>
-  </div>
-
-  <!-- art_series-->
-  <div class="card" *ngIf="card.layout == 'art_series' ">
-
-    <div class="card__face card__face--front">
-      <ion-img class="first" [src]="card.card_faces[0].image_uris.small"></ion-img>
-    </div>
-
-    <div class="card__face card__face--back">
-      <ion-img class="back" [src]="card.card_faces[1].image_uris.small"></ion-img>
-    </div>
-  </div>
-
-  <!-- Double_faced_token-->
-  <div class="card" *ngIf="card.layout == 'double_faced_token' ">
-
-    <div class="card__face card__face--front">
-      <ion-img class="first" [src]="card.card_faces[0].image_uris.small"></ion-img>
-    </div>
-
-    <div class="card__face card__face--back">
-      <ion-img class="back" [src]="card.card_faces[1].image_uris.small"></ion-img>
-    </div>
-  </div>
-
-  <!-- meld card-->
-
-  <!-- planar card -->
 
   <!-- FAB SECTION  -->
   <!-- FAB, Double_faced_token Layout  -->
