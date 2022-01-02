@@ -9,6 +9,7 @@ import { of } from 'rxjs';
 import { CardListPage } from './card-list.page';
 import { CardsService } from 'src/app/services/cards/cards.service';
 import { CardsComponent } from '../../components/cards/cards.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 describe('CardListPage', () => {
   let cardsComponent: CardListPage;
@@ -27,6 +28,7 @@ describe('CardListPage', () => {
           IonicModule.forRoot(),
           HttpClientTestingModule,
           RouterTestingModule,
+          Ng2SearchPipeModule
         ],
         providers: [{ provide: CardsService, useValue: fakecardsService }],
       }).compileComponents();

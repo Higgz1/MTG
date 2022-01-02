@@ -17,6 +17,7 @@ import {RouterTestingModule} from "@angular/router/testing";
 import { HomePage } from './home.page';
 import { SetsService } from 'src/app/services/sets/sets.service';
 import { CardsService } from 'src/app/services/cards/cards.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 describe('HomePage', () => {
   let homeComponent: HomePage;
@@ -39,7 +40,7 @@ describe('HomePage', () => {
 
       TestBed.configureTestingModule({
         declarations: [HomePage, MockComponent(SetsComponent)],
-        imports: [IonicModule.forRoot(), HttpClientTestingModule,RouterTestingModule],
+        imports: [IonicModule.forRoot(), HttpClientTestingModule,RouterTestingModule,Ng2SearchPipeModule],
         // Use fake instead of original
         providers: [{ provide: SetsService, useValue: fakesetsService },{ provide: CardsService, useValue: fakecardsService }],
       }).compileComponents();
