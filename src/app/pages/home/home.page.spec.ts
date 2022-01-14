@@ -1,3 +1,6 @@
+/* eslint-disable prefer-arrow/prefer-arrow-functions */
+/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable @typescript-eslint/naming-convention */
 import {
   HttpClientTestingModule,
   HttpTestingController,
@@ -13,11 +16,12 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { of } from 'rxjs';
-import {RouterTestingModule} from "@angular/router/testing";
+import {RouterTestingModule} from '@angular/router/testing';
 import { HomePage } from './home.page';
 import { SetsService } from 'src/app/services/sets/sets.service';
 import { CardsService } from 'src/app/services/cards/cards.service';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HomePageModule } from './home.module';
 
 describe('HomePage', () => {
   let homeComponent: HomePage;
@@ -40,7 +44,7 @@ describe('HomePage', () => {
 
       TestBed.configureTestingModule({
         declarations: [HomePage, MockComponent(SetsComponent)],
-        imports: [IonicModule.forRoot(), HttpClientTestingModule,RouterTestingModule,Ng2SearchPipeModule],
+        imports: [IonicModule.forRoot(), HttpClientTestingModule,RouterTestingModule,HomePageModule],
         // Use fake instead of original
         providers: [{ provide: SetsService, useValue: fakesetsService },{ provide: CardsService, useValue: fakecardsService }],
       }).compileComponents();

@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { DebugElement } from '@angular/core';
 import { SingleCardComponent } from './single-card.component';
+import { MockData } from '../../../assets/mockData';
+
 
 describe('SingleCardComponent', () => {
-  let singleCardComponent: SingleCardComponent,
-  fixture: ComponentFixture<SingleCardComponent>,
-  el: DebugElement;
-
-
+  let singleCardComponent: SingleCardComponent;
+  let fixture: ComponentFixture<SingleCardComponent>;
+  let el: DebugElement;
 
   const mockResponse = {
     data: [
@@ -132,6 +133,7 @@ describe('SingleCardComponent', () => {
             mana_cost: '{3}{B}',
             type_line: 'Creature — Human Shaman',
             oracle_text:
+              // eslint-disable-next-line max-len
               'Spells your opponents cast that target Accursed Witch cost {1} less to cast.\nWhen Accursed Witch dies, return it to the battlefield transformed under your control attached to target opponent.',
             colors: ['B'],
             power: '4',
@@ -160,7 +162,8 @@ describe('SingleCardComponent', () => {
             mana_cost: '',
             type_line: 'Enchantment — Aura Curse',
             oracle_text:
-              "Enchant player\nSpells you cast that target enchanted player cost {1} less to cast.\nAt the beginning of enchanted player's upkeep, that player loses 1 life and you gain 1 life.",
+              // eslint-disable-next-line max-len
+              'Enchant player\nSpells you cast that target enchanted player cost {1} less to cast.\nAt the beginning of enchanted player\'s upkeep, that player loses 1 life and you gain 1 life.',
             colors: ['B'],
             color_indicator: ['B'],
             artist: 'Wesley Burt',
@@ -212,6 +215,7 @@ describe('SingleCardComponent', () => {
             mana_cost: '{3}{U}{U}',
             type_line: 'Legendary Creature — God',
             oracle_text:
+              // eslint-disable-next-line max-len
               'Alrund gets +1/+1 for each card in your hand and each foretold card you own in exile.\nAt the beginning of your end step, choose a card type, then reveal the top two cards of your library. Put all cards of the chosen type revealed this way into your hand and the rest on the bottom of your library in any order.',
             colors: ['U'],
             power: '1',
@@ -240,12 +244,12 @@ describe('SingleCardComponent', () => {
             mana_cost: '{1}{U}',
             type_line: 'Legendary Creature — Bird',
             oracle_text:
-              "Flying\nWhenever Hakka, Whispering Raven deals combat damage to a player, return it to its owner's hand, then scry 2.",
+              'Flying\nWhenever Hakka, Whispering Raven deals combat damage to a player, return it to its owner\'s hand, then scry 2.',
             colors: ['U'],
             power: '2',
             toughness: '3',
             flavor_text:
-              "Alrund's raven soars between realms; no secret is beyond his grasp.",
+              'Alrund\'s raven soars between realms; no secret is beyond his grasp.',
             artist: 'Kieran Yanner',
             artist_id: 'aa7e89ed-d294-4633-9057-ce04dacfcfa4',
             illustration_id: '580be266-5f4c-4c30-adbd-58993cf8149f',
@@ -728,6 +732,8 @@ describe('SingleCardComponent', () => {
 
   it('should create', () => {
     expect(singleCardComponent).toBeTruthy();
+    const n1 = MockData.data.filter((item)=>
+    item.layout === 'split');
+  console.log(n1[0]);
   });
 });
- 

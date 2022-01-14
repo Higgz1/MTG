@@ -1,9 +1,9 @@
 <ion-card>
   <!-- Single face cards-->
-  <ion-img class="card" *ngIf="card.layout == 'normal'|| card.layout == 'leveler'|| card.layout == 'saga'|| card.layout == 'adventure'||card.layout =='scheme'|| card.layout =='class' || card.layout =='split' || card.layout =='flip' || card.layout == 'vanguard' ||card.layout == 'token' || card.layout == 'emblem' || card.layout =='augment' || card.layout =='host'" [src]="card.image_uris.small"></ion-img>
+  <ion-img class="card" *ngIf="card.layout === 'normal'|| card.layout === 'leveler'|| card.layout === 'saga'|| card.layout === 'adventure'||card.layout ==='scheme'|| card.layout ==='class' || card.layout ==='split' || card.layout ==='flip' || card.layout === 'vanguard' ||card.layout === 'token' || card.layout === 'emblem' || card.layout ==='augment' || card.layout ==='host'" [src]="card.image_uris.small"></ion-img>
 
   <!-- Dual faced cards-->
-  <div class="card" *ngIf="card.layout == 'transform' || card.layout == 'modal_dfc' || card.layout == 'art_series' || card.layout == 'double_faced_token'">
+  <div class="card" *ngIf="card.layout === 'transform' || card.layout === 'modal_dfc' || card.layout === 'art_series' || card.layout === 'double_faced_token'">
 
     <div class="card__face card__face--front">
       <ion-img class="first" [src]="card.card_faces[0].image_uris.small"></ion-img>
@@ -18,7 +18,7 @@
   <!-- FAB SECTION  -->
   <!-- FAB, Double_faced_token Layout  -->
   <div>
-    <ion-fab *ngIf="card.layout == 'double_faced_token' " horizontal="end" vertical="center" slot="fixed"
+    <ion-fab *ngIf="card.layout === 'double_faced_token' " horizontal="end" vertical="center" slot="fixed"
       (click)="flipToken(card)">
       <ion-fab-button color="light" style="opacity: 0.7;">
         <ion-icon name="repeat-outline"></ion-icon>
@@ -28,7 +28,7 @@
 
   <!-- FAB, Transform Layout  (works)-->
   <div>
-    <ion-fab *ngIf="card.layout == 'transform' " horizontal="end" vertical="center" slot="fixed"
+    <ion-fab *ngIf="card.layout === 'transform' " horizontal="end" vertical="center" slot="fixed"
       (click)="flipTransform(card)">
       <ion-fab-button color="light" style="opacity: 0.7;">
         <ion-icon name="repeat-outline"></ion-icon>
@@ -38,7 +38,7 @@
 
   <!-- FAB, Flip Layout Cards -->
   <div>
-    <ion-fab *ngIf="card.layout == 'flip' " horizontal="end" vertical="center" slot="fixed" (click)="flipCard(card)">
+    <ion-fab *ngIf="card.layout === 'flip' " horizontal="end" vertical="center" slot="fixed" (click)="flipCard(card)">
       <ion-fab-button color="light" style="opacity: 0.7;">
         <ion-icon name="swap-vertical-outline"></ion-icon>
       </ion-fab-button>
@@ -47,7 +47,7 @@
 
   <!-- FAB, modal_dfc Layout Cards -->
   <div>
-    <ion-fab *ngIf="card.layout == 'modal_dfc' " horizontal="end" vertical="center" slot="fixed"
+    <ion-fab *ngIf="card.layout === 'modal_dfc' " horizontal="end" vertical="center" slot="fixed"
       (click)="modal_dfc(card)">
       <ion-fab-button color="light" style="opacity: 0.7;">
         <ion-icon name="repeat-outline"></ion-icon>
@@ -56,7 +56,7 @@
   </div>
 
   <!-- FAB, art_series Layout Cards -->
-  <div *ngIf="card.layout == 'art_series'">
+  <div *ngIf="card.layout === 'art_series'">
     <ion-fab horizontal="end" vertical="center" slot="fixed" (click)="art_series(card)">
       <ion-fab-button color="light" style="opacity: 0.7;">
         <ion-icon name="repeat-outline"></ion-icon>

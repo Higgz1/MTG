@@ -10,6 +10,7 @@ import { CardListPage } from './card-list.page';
 import { CardsService } from 'src/app/services/cards/cards.service';
 import { CardsComponent } from '../../components/cards/cards.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CardListPageModule } from './card-list.module';
 
 describe('CardListPage', () => {
   let cardsComponent: CardListPage;
@@ -28,7 +29,7 @@ describe('CardListPage', () => {
           IonicModule.forRoot(),
           HttpClientTestingModule,
           RouterTestingModule,
-          Ng2SearchPipeModule
+          CardListPageModule
         ],
         providers: [{ provide: CardsService, useValue: fakecardsService }],
       }).compileComponents();

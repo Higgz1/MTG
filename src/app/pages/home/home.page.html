@@ -36,7 +36,7 @@
   <app-sets *ngFor="let set of sets | filter:set" [set]="set" (click)="getCards(set.search_uri)"></app-sets>
 
   <ion-fab *ngIf="isShown" slot="fixed" vertical="bottom" horizontal="end" >
-    <ion-fab-button (click)="ScrollToTop()" color="secondary" size="small">
+    <ion-fab-button (click)="scrollToTop()" color="secondary" size="small">
       <ion-icon name="chevron-up-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>

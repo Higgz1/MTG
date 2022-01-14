@@ -1,3 +1,5 @@
+/* eslint-disable no-bitwise */
+/* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular';
@@ -23,12 +25,12 @@ export class HomePage implements OnInit {
     this.getSets();
   }
 
-  ScrollToTop() {
+  scrollToTop() {
     this.content.scrollToTop(1500);
   }
 
   refresh(event) {
-    
+
     this.getSets();
     event.target.complete();
 
@@ -37,7 +39,7 @@ export class HomePage implements OnInit {
   getSets() {
     this.setService.getSets().subscribe((setsList: any) => {
       this.sets = setsList.data;
-      for (let s of this.sets) {
+      for (const s of this.sets) {
         // Create a custom color for every email
         s.color = this.intToRGB(this.hashCode(s.set_type));
       }
@@ -52,7 +54,7 @@ export class HomePage implements OnInit {
   fabDisplay(event) {
     const screenSize = event.target.clientHeight;
 
-    let bottomPosition = screenSize + event.detail.scrollTop;
+    const bottomPosition = screenSize + event.detail.scrollTop;
     if (bottomPosition >= 1200) {
       this.isShown = true;
     } else if (bottomPosition < 1500) {
@@ -61,15 +63,15 @@ export class HomePage implements OnInit {
   }
 
   private hashCode(str) {
-    var hash = 0;
-    for (var i = 0; i < str.length; i++) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
       hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
     return hash;
   }
 
   private intToRGB(i) {
-    var c = (i & 0x00ffffff).toString(16).toUpperCase();
+    const c = (i & 0x00ffffff).toString(16).toUpperCase();
 
     return '#' + '00000'.substring(0, 6 - c.length) + c;
   }

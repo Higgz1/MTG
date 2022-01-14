@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
@@ -8,52 +9,52 @@ describe('SetsService', () => {
   let setService: SetsService;
   let httpTestingController: HttpTestingController;
   let succeeded = false;
-  let baseUrl = 'https://api.scryfall.com/sets';
+  const baseUrl = 'https://api.scryfall.com/sets';
 
   const mockResponse = {
-    "object": "list",
-    "has_more": false,
-    "data": [
+    object: 'list',
+    has_more: false,
+    data: [
       {
-        "object": "set",
-        "id": "78a7f4da-4838-4011-9f58-de8020d1fd2d",
-        "code": "cc2",
-        "tcgplayer_id": 2905,
-        "name": "Commander Collection: Black",
-        "uri": "https://api.scryfall.com/sets/78a7f4da-4838-4011-9f58-de8020d1fd2d",
-        "scryfall_uri": "https://scryfall.com/sets/cc2",
-        "search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Acc2&unique=prints",
-        "released_at": "2022-01-28",
-        "set_type": "from_the_vault",
-        "card_count": 9,
-        "digital": false,
-        "nonfoil_only": false,
-        "foil_only": false,
-        "icon_svg_uri": "https://c2.scryfall.com/file/scryfall-symbols/sets/cc2.svg?1636952400"
+        object: 'set',
+        id: '78a7f4da-4838-4011-9f58-de8020d1fd2d',
+        code: 'cc2',
+        tcgplayer_id: 2905,
+        name: 'Commander Collection: Black',
+        uri: 'https://api.scryfall.com/sets/78a7f4da-4838-4011-9f58-de8020d1fd2d',
+        scryfall_uri: 'https://scryfall.com/sets/cc2',
+        search_uri: 'https://api.scryfall.com/cards/search?order=set&q=e%3Acc2&unique=prints',
+        released_at: '2022-01-28',
+        set_type: 'from_the_vault',
+        card_count: 9,
+        digital: false,
+        nonfoil_only: false,
+        foil_only: false,
+        icon_svg_uri: 'https://c2.scryfall.com/file/scryfall-symbols/sets/cc2.svg?1636952400'
       }, {
-        "object": "set",
-        "id": "a4a0db50-8826-4e73-833c-3fd934375f96",
-        "code": "aer",
-        "mtgo_code": "aer",
-        "arena_code": "aer",
-        "tcgplayer_id": 1857,
-        "name": "Aether Revolt",
-        "uri": "https://api.scryfall.com/sets/a4a0db50-8826-4e73-833c-3fd934375f96",
-        "scryfall_uri": "https://scryfall.com/sets/aer",
-        "search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints",
-        "released_at": "2017-01-20",
-        "set_type": "expansion",
-        "card_count": 194,
-        "printed_size": 184,
-        "digital": false,
-        "nonfoil_only": false,
-        "foil_only": false,
-        "block_code": "kld",
-        "block": "Kaladesh",
-        "icon_svg_uri": "https://c2.scryfall.com/file/scryfall-symbols/sets/aer.svg?1637557200"
+        object: 'set',
+        id: 'a4a0db50-8826-4e73-833c-3fd934375f96',
+        code: 'aer',
+        mtgo_code: 'aer',
+        arena_code: 'aer',
+        tcgplayer_id: 1857,
+        name: 'Aether Revolt',
+        uri: 'https://api.scryfall.com/sets/a4a0db50-8826-4e73-833c-3fd934375f96',
+        scryfall_uri: 'https://scryfall.com/sets/aer',
+        search_uri: 'https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints',
+        released_at: '2017-01-20',
+        set_type: 'expansion',
+        card_count: 194,
+        printed_size: 184,
+        digital: false,
+        nonfoil_only: false,
+        foil_only: false,
+        block_code: 'kld',
+        block: 'Kaladesh',
+        icon_svg_uri: 'https://c2.scryfall.com/file/scryfall-symbols/sets/aer.svg?1637557200'
       }
     ]
-  }
+  };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -77,6 +78,7 @@ describe('SetsService', () => {
   // Test get all sets
   it('should retrieve all sets', () => {
 
+    // eslint-disable-next-line @typescript-eslint/ban-types
     let actualSets: {} | undefined;
     setService.getSets().subscribe((resp) => {
 
@@ -85,7 +87,7 @@ describe('SetsService', () => {
 
       expect(succeeded).toBeTrue();
       expect(actualSets).toBeTruthy('No sets were returned');
-      expect(actualSets).toEqual(mockResponse, 'should return expected results'), fail;
+      expect(actualSets).toEqual(mockResponse, 'should return expected results');
     });
 
     const req = httpTestingController.expectOne(baseUrl);
@@ -95,15 +97,15 @@ describe('SetsService', () => {
 
   // Test get single set based on Id
   it('should get a single set based on Id', () => {
-    let code = "aer";
+    const code = 'aer';
 
     setService.getSingleSet(code).subscribe((resp: any) => {
       succeeded = true;
       const actualSet = resp;
 
       expect(succeeded).toBeTrue();
-      expect(actualSet).toEqual(mockResponse.data[1], 'should return expected results'), fail;
-      expect(actualSet.code).toEqual(code, 'should return expected results'), fail;
+      expect(actualSet).toEqual(mockResponse.data[1], 'should return expected results');
+      expect(actualSet.code).toEqual(code, 'should return expected results');
 
     });
 
@@ -152,8 +154,8 @@ describe('SetsService', () => {
     const status = 500;
     const statusText = 'Server error';
     const errorEvent = new ErrorEvent('API error');
-    let id = "aer",
-      actualError: HttpErrorResponse | undefined;
+    const id = 'aer';
+      let actualError: HttpErrorResponse | undefined;
 
     setService.getSingleSet(id).subscribe(
       () => {
