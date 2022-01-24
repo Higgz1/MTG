@@ -36,6 +36,12 @@ export class HomePage implements OnInit {
 
   }
 
+  toggleDarkModeHandler(event){
+      // console.log(event);
+
+    document.body.classList.toggle('dark');
+  }
+
   getSets() {
     this.setService.getSets().subscribe((setsList: any) => {
       this.sets = setsList.data;
