@@ -29,7 +29,7 @@ export class CardListPage implements OnInit {
     this.cardsService.getCards(this.cardUri).subscribe((cards: any) => {
       this.cards = cards.data;
       //adding index property to cards list
-      for (let c of this.cards) {
+      for (const c of this.cards) {
         c.index = this.cards.indexOf(c);
       }
       console.log('cards', this.cards);
