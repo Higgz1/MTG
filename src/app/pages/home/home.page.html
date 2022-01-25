@@ -33,7 +33,7 @@
 </ion-header>
 
 <ion-content [scrollEvents]="true" (ionScroll)="fabDisplay($event)">
-  <ion-refresher
+  <!-- <ion-refresher
     slot="fixed"
     (ionRefresh)="refresh($event)"
     pullMin="100"
@@ -46,16 +46,18 @@
       refreshingText=""
     >
     </ion-refresher-content>
-  </ion-refresher>
+  </ion-refresher> -->
 
+
+  <!-- see https://stackoverflow.com/questions/55634525/angular-material-scroll-loads-more-items-than-expected -->
   <cdk-virtual-scroll-viewport
-    itemSize="35"
+    itemSize="{{126}}"
+    minBufferPx="{{126*6}}"
+    maxBufferPx="{{126*10}}"
   >
-    <app-sets
-      *cdkVirtualFor="let set of sets | filter:set"
-      [set]="set"
-      (click)="getCards(set.search_uri)"
-    ></app-sets>
+    <div *cdkVirtualFor="let set of sets | filter:set; ">
+      <app-sets [set]="set" (click)="getCards(set.search_uri)"></app-sets>
+    </div>
 
     <ion-fab *ngIf="isShown" slot="fixed" vertical="bottom" horizontal="end">
       <ion-fab-button (click)="scrollToTop()" color="secondary" size="small">
