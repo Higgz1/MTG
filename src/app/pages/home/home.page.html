@@ -52,7 +52,7 @@
   <!-- see https://stackoverflow.com/questions/55634525/angular-material-scroll-loads-more-items-than-expected -->
   <cdk-virtual-scroll-viewport
     itemSize="{{126}}"
-    minBufferPx="{{126*6}}"
+    minBufferPx="{{126*10}}"
     maxBufferPx="{{126*10}}"
   >
     <div *cdkVirtualFor="let set of sets | filter:set; ">
