@@ -49,7 +49,7 @@ export class HomePage implements OnInit {
         // Create a custom color for every email
         s.color = this.intToRGB(this.hashCode(s.set_type));
       }
-      // console.log('sets', this.sets);
+      console.log('sets', this.sets);
     });
   }
 
