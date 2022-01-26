@@ -71,7 +71,7 @@ export class HomePage implements OnInit {
 
   fabDisplay(event) {
     const screenSize = event;
-    console.log('screensize',event);
+    // console.log('screensize',event);
 
     
     if (screenSize > 20) {
