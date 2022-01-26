@@ -44,7 +44,7 @@ export class HomePage implements OnInit {
 
   getSets() {
     this.setService.getSets().subscribe((setsList: any) => {
-      this.sets = setsList.data;
+      this.sets = setsList.data.filter((set)=>set.card_count !== 0 );
       for (const s of this.sets) {
         // Create a custom color for every email
         s.color = this.intToRGB(this.hashCode(s.set_type));
