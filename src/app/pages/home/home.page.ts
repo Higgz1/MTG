@@ -1,5 +1,6 @@
 /* eslint-disable no-bitwise */
 /* eslint-disable @typescript-eslint/member-ordering */
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular';
@@ -14,6 +15,7 @@ import { CardsService } from '../../services/cards/cards.service';
 export class HomePage implements OnInit {
   public isShown = false;
   @ViewChild(IonContent, { static: false }) content: IonContent;
+  @ViewChild(CdkVirtualScrollViewport) virtualScroll: CdkVirtualScrollViewport;
   sets: any;
 
   constructor(
@@ -25,26 +27,36 @@ export class HomePage implements OnInit {
     this.getSets();
   }
 
+  // ngAfterViewInit() {
+
+  // const test = this.virtualScroll.measureScrollOffset('top');
+  // console.log(test);
+  
+
+  
+     
+    
+    
+  // }
+
   scrollToTop() {
-    this.content.scrollToTop(1500);
+    this.virtualScroll.scrollToIndex(0, "smooth");
   }
 
   refresh(event) {
-
     this.getSets();
     event.target.complete();
-
   }
 
-  toggleDarkModeHandler(event){
-      // console.log(event);
+  toggleDarkModeHandler(event) {
+    // console.log(event);
 
     document.body.classList.toggle('dark');
   }
 
   getSets() {
     this.setService.getSets().subscribe((setsList: any) => {
-      this.sets = setsList.data.filter((set)=>set.card_count !== 0 );
+      this.sets = setsList.data.filter((set) => set.card_count !== 0);
       for (const s of this.sets) {
         // Create a custom color for every email
         s.color = this.intToRGB(this.hashCode(s.set_type));
@@ -58,12 +70,13 @@ export class HomePage implements OnInit {
   }
 
   fabDisplay(event) {
-    const screenSize = event.target.clientHeight;
+    const screenSize = event;
+    console.log('screensize',event);
 
-    const bottomPosition = screenSize + event.detail.scrollTop;
-    if (bottomPosition >= 1200) {
+    
+    if (screenSize > 20) {
       this.isShown = true;
-    } else if (bottomPosition < 1500) {
+    } else if (screenSize < 20) {
       this.isShown = false;
     }
   }
