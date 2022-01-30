@@ -3,7 +3,7 @@
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonContent } from '@ionic/angular';
+import { IonContent, LoadingController } from '@ionic/angular';
 import { SetsService } from 'src/app/services/sets/sets.service';
 import { CardsService } from '../../services/cards/cards.service';
 
@@ -21,7 +21,8 @@ export class HomePage implements OnInit {
   constructor(
     private router: Router,
     private setService: SetsService,
-    private cardsService: CardsService
+    private cardsService: CardsService,
+    public loadingController: LoadingController
   ) {}
   ngOnInit() {
     this.getSets();
@@ -62,12 +63,23 @@ export class HomePage implements OnInit {
     // document.body.classList.toggle('dark');
   }
 
-  getSets() {
+  async getSets() {
+    const loading = await this.loadingController.create({
+      spinner: 'crescent',
+      message: 'Please wait...',
+      // message: 'Click the backdrop to dismiss early...',
+      translucent: true,
+      // cssClass: 'custom-class custom-loading',
+      backdropDismiss: true
+    });
+    await loading.present();
+
     this.setService.getSets().subscribe((setsList: any) => {
       this.sets = setsList.data.filter((set) => set.card_count !== 0);
       for (const s of this.sets) {
         // Create a custom color for every email
         s.color = this.intToRGB(this.hashCode(s.set_type));
+        loading.dismiss();
       }
       console.log('sets', this.sets);
     });
