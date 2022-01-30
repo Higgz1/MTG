@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'higgz.mtg.project',
   appName: 'MTG',
   webDir: 'www',
   bundledWebRuntime: false
