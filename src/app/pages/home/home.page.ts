@@ -49,9 +49,17 @@ export class HomePage implements OnInit {
   }
 
   toggleDarkModeHandler(event) {
-    // console.log(event);
+    
+    const colorTheme = event.detail.checked;
+    if (colorTheme){
+      document.body.setAttribute('color-theme','dark')
+    }
+    else{
+      document.body.setAttribute('color-theme','light')
 
-    document.body.classList.toggle('dark');
+    }
+
+    // document.body.classList.toggle('dark');
   }
 
   getSets() {
