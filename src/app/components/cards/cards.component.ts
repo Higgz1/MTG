@@ -27,6 +27,6 @@ export class CardsComponent implements OnInit {
 
   card_view(card){
     console.log(card);
-    // this.router.navigate(['/card-view', { uri: JSON.stringify(card) }]);
+    this.router.navigate(['/card-view', { card: JSON.stringify(card) }]);
   }
 }
