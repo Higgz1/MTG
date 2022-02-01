@@ -11,6 +11,7 @@ import { CardsService } from 'src/app/services/cards/cards.service';
 export class CardListPage implements OnInit {
   cards: any;
   cardUri: any;
+  set_name: string;
 
   constructor(
     private cardsService: CardsService,
@@ -39,14 +40,17 @@ export class CardListPage implements OnInit {
     });
     await loading.present();
 
-    this.cardsService.getCards(this.cardUri).subscribe((cards: any) => {
-      this.cards = cards.data;
+    this.cardsService.getCards(this.cardUri).subscribe((resp: any) => {
+      // console.log('cards', resp);
+
+      this.cards = resp.data;
       //adding index property to cards list
       for (const c of this.cards) {
         c.index = this.cards.indexOf(c);
         loading.dismiss();
 
       }
+      this.set_name =  this.cards[0].set_name
       console.log('cards', this.cards);
     });
 
